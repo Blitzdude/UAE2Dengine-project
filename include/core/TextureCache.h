@@ -16,7 +16,7 @@ namespace engine {
 		~TextureCache();
 
 		Texture2D getTexture(std::string texturePath);
-		void createTexture(std::string texturePath, int width, int height, int bytesPerPixel, void* manager);
+		Texture2D createTexture(std::string texturePath, int width, int height, int bytesPerPixel, void* manager);
 
 	private:
 		std::map<std::string, Texture2D> m_textureMap;

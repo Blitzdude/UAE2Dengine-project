@@ -13,7 +13,7 @@ namespace engine {
 	{
 	public:
 		static Texture2D getTexture(std::string texturePath);
-		static void createTexture(std::string texturePath, int width, int height, int bytesPerPixel, void* manager);
+		static Texture2D createTexture(std::string texturePath, int width, int height, int bytesPerPixel, void* manager);
 	private:
 		static TextureCache m_textureCache;
 	};

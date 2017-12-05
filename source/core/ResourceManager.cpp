@@ -9,9 +9,9 @@ Texture2D ResourceManager::getTexture(std::string texturePath)
 	return m_textureCache.getTexture(texturePath);
 }
 
-void ResourceManager::createTexture(std::string texturePath, int width, int height, int bytesPerPixel, void * manager)
+Texture2D ResourceManager::createTexture(std::string texturePath, int width, int height, int bytesPerPixel, void * manager)
 {
-	m_textureCache.createTexture(texturePath, width, height, bytesPerPixel, manager);
+	return m_textureCache.createTexture(texturePath, width, height, bytesPerPixel, manager);
 }
 
 }

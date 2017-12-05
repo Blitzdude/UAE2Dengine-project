@@ -11,6 +11,8 @@
 #include <core/IOManager.h>
 #include <core/ResourceManager.h>
 #include <glm/glm.hpp>
+#include <core/stb_image.h>
+
 
 #include "TestApplication.h"
 
@@ -38,11 +40,14 @@ namespace engine
 		// create camera and initilize it
 		m_camera = new Camera2D();
 		m_camera->init(getWindow()->getWidth(), getWindow()->getHeight());
-		//create textures
-		ResourceManager::createTexture("mr_t.png", 50, 50, 4, m_assetManager);
 		// create Spritebatch and initialize it
 		m_spriteBatch = new SpriteBatch();
 		m_spriteBatch->init();
+		
+		//create textures
+		int w = 5, h = 5;
+		m_fooTexture = ResourceManager::createTexture("mr_t.png", w, h, 4, m_assetManager);
+
 	}
 
 	void TestApplication::initShaders()
@@ -94,13 +99,13 @@ namespace engine
 		glUniformMatrix4fv(pLocation, 1, GL_FALSE, &(cameraMatrix[0][0]));
 
 
-		glm::vec4 position(xVal, yVal, 50.0f, 50.0f);
+		glm::vec4 position(xVal, yVal, 100.0f, 100.0f);
 		glm::vec4 uv(0.0f, 0.0f, 1.0f, 1.0f);
 		
-		static Texture2D fooTexture = ResourceManager::getTexture("mr_t.png");
+
 		m_spriteBatch->begin();
 
-		m_spriteBatch->draw(position, uv, fooTexture.id, 0.0f, ColorRGBA8(255, 255, 255, 255));
+		m_spriteBatch->draw(position, uv, m_fooTexture.id, 0.0f, ColorRGBA8(255, 0, 255, 255));
 		
 
 		m_spriteBatch->end();

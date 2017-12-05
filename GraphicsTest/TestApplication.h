@@ -14,16 +14,17 @@
 #include <core/InputManager.h>
 #include <core/Camera2D.h>
 #include <core/SpriteBatch.h>
+#include <graphics/Texture2D.h>
 
 #include <vector>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+namespace engine {
 
-namespace engine
-{
 	class Window;
+
 	class GraphicsSystem;
 
 
@@ -48,13 +49,14 @@ namespace engine
 
 	private:
 		
-		float						m_totalTime;
-		void* 						m_assetManager;
-		InputManager*				m_inputManager;
-		Camera2D*					m_camera;
-		SpriteBatch*				m_spriteBatch;
-
+		float					m_totalTime;
+		void* 					m_assetManager;
+		InputManager*			m_inputManager;
+		Camera2D*				m_camera;
+		SpriteBatch*			m_spriteBatch;
+		Texture2D				m_fooTexture;
 	};
+
 }
 
 #endif
