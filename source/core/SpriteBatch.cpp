@@ -142,11 +142,14 @@ namespace engine {
 	{
 		// Bind our VAO. This sets up the opengl state we need, including the 
 		// vertex attribute pointers and it binds the VBO
-		glBindVertexArrayOES(m_vao); // TODO:FIX!!!!!!
+		glBindVertexArrayOES(m_vao); 
 
 		for (size_t i = 0; i < m_renderBatches.size(); i++) {
+
+			
 			glBindTexture(GL_TEXTURE_2D, m_renderBatches[i].texture);
 
+			
 			glDrawArrays(GL_TRIANGLES, m_renderBatches[i].offset, m_renderBatches[i].numVertices);
 		}
 

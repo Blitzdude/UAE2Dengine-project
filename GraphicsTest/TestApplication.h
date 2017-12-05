@@ -54,7 +54,6 @@ namespace engine {
 		InputManager*			m_inputManager;
 		Camera2D*				m_camera;
 		SpriteBatch*			m_spriteBatch;
-		Texture2D				m_fooTexture;
 	};
 
 }

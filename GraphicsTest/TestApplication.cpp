@@ -44,9 +44,7 @@ namespace engine
 		m_spriteBatch = new SpriteBatch();
 		m_spriteBatch->init();
 		
-		//create textures
-		int w = 5, h = 5;
-		m_fooTexture = ResourceManager::createTexture("mr_t.png", w, h, 4, m_assetManager);
+		
 
 	}
 
@@ -58,6 +56,7 @@ namespace engine
 		shaderPtr->addAttribute("vPosition");
 		shaderPtr->addAttribute("vTexCoord");
 
+
 		shaderPtr->linkShaders();
 
 	}
@@ -65,7 +64,7 @@ namespace engine
 	bool TestApplication::update(float deltaTime)
 	{
 		m_totalTime += deltaTime;
-		processInput(getWindow());
+		//processInput(getWindow());
 
 		m_camera->update();
 		
@@ -75,18 +74,21 @@ namespace engine
 
 	void TestApplication::render(Window* window, GraphicsSystem* graphics)
 	{
-		float xVal, yVal;
-		xVal = m_inputManager->getMouseX();
+		float val = fabsf(sinf(2.0f*m_totalTime));
+		// set the base depth to 1.0f		
+		glClearDepthf(1.0f);
+		// Clear screen with pulsating yellow: 
+		graphics->clearScreen(val, val * 1.5f, val * 0.5f, true);
 		
-		yVal = (m_inputManager->getMouseY()) * -1.0f;
+		glActiveTexture(GL_TEXTURE0);
 
+		glm::vec2 coords = glm::vec2(m_inputManager->getMouseX(), m_inputManager->getMouseY());
 
+		coords = m_camera->convertScreenToWorld(coords);
 		
 		(void)window;	
 		
-		float val = fabsf(sinf(2.0f*m_totalTime));
-		// Clear screen with pulsating yellow
-		graphics->clearScreen(val, val * 1.5f, val * 0.5f, true);
+
 
 		auto shaderProg = graphics->getShader(0);
 
@@ -94,25 +96,30 @@ namespace engine
 
 		//setCamera matrix
 		GLint pLocation = shaderProg->getUniformLocation("MVP");
+		glUniform1i(pLocation, 0);
+
 		glm::mat4 cameraMatrix = m_camera->getCameraMatrix();
 
 		glUniformMatrix4fv(pLocation, 1, GL_FALSE, &(cameraMatrix[0][0]));
 
-
-		glm::vec4 position(xVal, yVal, 100.0f, 100.0f);
-		glm::vec4 uv(0.0f, 0.0f, 1.0f, 1.0f);
-		
-
 		m_spriteBatch->begin();
 
-		m_spriteBatch->draw(position, uv, m_fooTexture.id, 0.0f, ColorRGBA8(255, 0, 255, 255));
+		glm::vec4 position(coords.x, coords.y, 100.0f, 100.0f);
+		glm::vec4 uv(0.0f, 0.0f, 1.0f, 1.0f);
+		
+		//create textures
+		int w = 5, h = 5;
+		static Texture2D fooTexture = ResourceManager::createTexture("mr_t.png", w, h, 4, m_assetManager);
+		ColorRGBA8 color(255, 255, 255, 255);
+		m_spriteBatch->draw(position, uv, fooTexture.id, 0.0f, color);
 		
 
 		m_spriteBatch->end();
 
 		m_spriteBatch->renderBatch();
 
-
+		// unbind the texture
+		glBindTexture(GL_TEXTURE_2D, 0);
 		shaderProg->unUse();
 		
 		// set OpenGL drawing window display to entire window.
@@ -124,14 +131,5 @@ namespace engine
 
 	void TestApplication::processInput(Window* window)
 	{
-		
-		float mX = m_inputManager->getMouseX();
-		float mY = m_inputManager->getMouseY();
-
-		if ((mX < window->getWidth() && mX > 0) &&
-			(mY < window->getHeight() && mY > 0))
-		{
-			LOGI("MouseX: %f MouseY: %f \r", mX, mY);
-		}
 	}
 }

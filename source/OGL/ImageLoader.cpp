@@ -48,8 +48,6 @@ namespace engine {
 		// Generate the mipmaps
 		glGenerateMipmap(GL_TEXTURE_2D);
 
-		// unbind the texture
-		glBindTexture(GL_TEXTURE_2D, 0);
 		// return the texture data
 		
 		texture.width = width;
