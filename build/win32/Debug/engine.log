@@ -1,3 +1,6 @@
-﻿  ImageLoader.cpp
-c:\users\joelkan\desktop\uae2dengine-repository\source\ogl\imageloader.cpp(18): warning C4100: 'manager': unreferenced formal parameter
-  engine.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib
+﻿  Win32Window.cpp
+e:\uae2dengine_repofile\uae2dengine-repository\source\win32\win32window.cpp(16): warning C4101: 'hdc': unreferenced local variable
+e:\uae2dengine_repofile\uae2dengine-repository\source\win32\win32window.cpp(19): warning C4101: 'ptWindowLR': unreferenced local variable
+e:\uae2dengine_repofile\uae2dengine-repository\source\win32\win32window.cpp(18): warning C4101: 'ptWindowUL': unreferenced local variable
+e:\uae2dengine_repofile\uae2dengine-repository\source\win32\win32window.cpp(17): warning C4101: 'windowRect': unreferenced local variable
+  engine.vcxproj -> E:\UAE2DEngine_repofile\UAE2dEngine-repository\build\win32\Debug\engine.lib

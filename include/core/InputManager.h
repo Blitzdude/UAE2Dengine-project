@@ -17,10 +17,18 @@ namespace engine {
 		float getMouseX();
 		float getMouseY();
 
+		void setArrowKeyValues(float x, float y);
+
+		float getArrowKeyX();
+		float getArrowKeyY();
+
 	private:
 
 		float m_mouseX;
 		float m_mouseY;
+
+		float m_arrowkeyX;
+		float m_arrowkeyY;
 	};
 
 	

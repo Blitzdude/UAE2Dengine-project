@@ -25,7 +25,6 @@ namespace engine {
 		// Decode the png using stbi_load_from_memmory
 		int stb_fmt = bytesPerPixel == 3 ? STBI_rgb : STBI_rgb_alpha; // format depending on bit Depth
 		unsigned char* out = stbi_load(filepath.c_str(), &width, &height, &bytesPerPixel, stb_fmt);
-
 		// Generate the openGL texture object
 		glGenTextures(1, &(texture.id));
 		

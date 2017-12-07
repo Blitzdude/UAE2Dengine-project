@@ -87,6 +87,57 @@ namespace engine
 		}
 		break;
 
+		case WM_KEYDOWN:
+		{
+			// get window context 
+			Win32Window *window = (Win32Window*)(LONG_PTR)GetWindowLongPtr(hWnd, GWL_USERDATA);
+
+			switch (wParam)
+			{
+			case VK_UP:
+				window->getInputManager()->setArrowKeyValues(0.0f, 1.0f);
+				break;
+			case VK_RIGHT:
+				window->getInputManager()->setArrowKeyValues(1.0f, 0.0f);
+				break;
+			case VK_DOWN:
+				window->getInputManager()->setArrowKeyValues(0.0f, -1.0f);
+				break;
+			case VK_LEFT:
+				window->getInputManager()->setArrowKeyValues(-1.0f, 0.0f);
+				break;
+			default:
+				printf("Not ArrowKey Pressed.");
+				break;
+			}
+			break;
+		}
+		break;
+
+		case WM_KEYUP:
+		{
+			// get window context 
+			Win32Window *window = (Win32Window*)(LONG_PTR)GetWindowLongPtr(hWnd, GWL_USERDATA);
+
+			switch (wParam)
+			{
+			case VK_UP:
+				window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				break;
+			case VK_RIGHT:
+				window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				break;
+			case VK_DOWN:
+				window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				break;
+			case VK_LEFT:
+				window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				break;
+			}
+			break;
+		}
+		break;
+
 		default:
 			lRet = DefWindowProc(hWnd, uMsg, wParam, lParam);
 			break;

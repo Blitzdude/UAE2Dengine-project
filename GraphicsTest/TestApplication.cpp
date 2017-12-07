@@ -23,6 +23,8 @@ namespace engine
 			, m_inputManager(inputMgr)
 			, m_assetManager(manager)
             , m_totalTime(0.0f)
+			, spriteXCoord(200.0f)
+			, spriteYCoord(200.0f)
 	{
 		LOGI("Starting UP...\n");
 
@@ -82,8 +84,12 @@ namespace engine
 		
 		glActiveTexture(GL_TEXTURE0);
 
-		glm::vec2 coords = glm::vec2(m_inputManager->getMouseX(), m_inputManager->getMouseY());
-
+		//glm::vec2 coords = glm::vec2(m_inputManager->getMouseX(), m_inputManager->getMouseY());
+		if (m_inputManager->getArrowKeyY() > 0.0f) { spriteYCoord -= 5.0f; }
+		if (m_inputManager->getArrowKeyY() < 0.0f) { spriteYCoord += 5.0f; }
+		if (m_inputManager->getArrowKeyX() > 0.0f) { spriteXCoord += 5.0f; }
+		if (m_inputManager->getArrowKeyX() < 0.0f) { spriteXCoord -= 5.0f; }
+		glm::vec2 coords = glm::vec2(spriteXCoord, spriteYCoord);
 		coords = m_camera->convertScreenToWorld(coords);
 		
 		(void)window;	
