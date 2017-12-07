@@ -57,7 +57,7 @@ namespace engine {
 	{
 
 		//tell opengl that we want to use fileContents as the contents of the shader file
-		glShaderSource(id, 1, &source, nullptr);
+		glShaderSource(id, 1, &source, NULL);
 
 		//compile the shader
 		glCompileShader(id);
@@ -88,8 +88,7 @@ namespace engine {
 		glAttachShader(m_programId, m_vertexShaderId);
 		glAttachShader(m_programId, m_fragmentShaderId);
 
-		// binds the attributes TODO: create separate method. 
-		glBindAttribLocation(m_programId, 0, "vPosition");
+		// linking attributes is done during init in main cpp. 
 
 		//Link our program
 		glLinkProgram(m_programId);
@@ -152,9 +151,21 @@ namespace engine {
 		GLuint location = glGetUniformLocation(m_programId, uniformName);
 		if (location == ERROR_INVALID_INDEX) {
 			LOGE("Uniform %s not found in shader!", uniformName);
+			return NULL;
 		}
 		return location;
 	}
+
+	GLuint Shader::getAttributeLocation(const char * const attributeName)
+	{
+		GLuint location = glGetAttribLocation(m_programId, attributeName);
+		if (location == ERROR_INVALID_INDEX) {
+			LOGE("Attribute %s not found in shader!", attributeName);
+			return NULL;
+		}
+		return location;
+	}
+
 	void Shader::dispose()
 	{
 		if (m_programId)

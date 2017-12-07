@@ -34,6 +34,7 @@ namespace engine {
 		void addAttribute(const std::string& attributeName);
 		
 		GLuint getUniformLocation(const char* const uniformName);
+		GLuint getAttributeLocation(const char* const attributeName);
 
 		void dispose();
 		
