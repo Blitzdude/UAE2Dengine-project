@@ -35,6 +35,8 @@ namespace engine {
 		LOGI("\n before texture binding-> width: %d, height: %d, bbp: %d \n", width, height, (int)bytesPerPixel);
 		glTexImage2D(GL_TEXTURE_2D, 0, fmt, width, height, 0, fmt, GL_UNSIGNED_BYTE, out);
 
+
+
 		// set some texture parameters
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);

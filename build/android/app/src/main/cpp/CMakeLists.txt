@@ -23,6 +23,7 @@ add_library(native-activity SHARED
             ${CORE_SOURCES}
             ${GRAPHICS_SOURCES}
             ../../../../../../GraphicsTest/TestApplication.cpp
+            ../../../../../../GraphicsTest/Sprite.cpp
             main.cpp)
 
 target_include_directories(native-activity PRIVATE

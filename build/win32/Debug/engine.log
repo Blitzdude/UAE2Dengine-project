@@ -1,3 +1,19 @@
-﻿  ImageLoader.cpp
+﻿  OGLGraphicsSystem.cpp
+c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec2.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec2.hpp(206): note: see reference to class template instantiation 'glm::tvec2<T,P>' being compiled
+c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec2.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec2.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec3.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec3.hpp(227): note: see reference to class template instantiation 'glm::tvec3<T,P>' being compiled
+c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec3.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec3.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec4.hpp(45): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec4.hpp(272): note: see reference to class template instantiation 'glm::tvec4<T,P>' being compiled
+c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec4.hpp(46): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\uae2dengine-repository\include\glm\detail\type_vec4.hpp(47): warning C4201: nonstandard extension used: nameless struct/union
+c:\users\joelkan\desktop\uae2dengine-repository\include\glm\gtc\quaternion.hpp(56): warning C4201: nonstandard extension used: nameless struct/union
+  c:\users\joelkan\desktop\uae2dengine-repository\include\glm\gtc\quaternion.hpp(132): note: see reference to class template instantiation 'glm::tquat<T,P>' being compiled
+  ImageLoader.cpp
 c:\users\joelkan\desktop\uae2dengine-repository\source\ogl\imageloader.cpp(18): warning C4100: 'manager': unreferenced formal parameter
+  Generating Code...
   engine.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib

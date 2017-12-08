@@ -110,7 +110,9 @@ namespace engine
 		LOGI("  GL_EXTENSIONS: %s\n", glGetString(GL_EXTENSIONS));
 		LOGI("Surface size: %dx%d\n", w, h);
 		
-		// initialize shaders and such
+		// enable alpha blending
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		
 		m_active = true;
 	}

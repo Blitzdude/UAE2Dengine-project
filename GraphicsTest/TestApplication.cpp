@@ -9,9 +9,9 @@
 #include <graphics/Window.h>
 #include <math.h>
 #include <core/IOManager.h>
-#include <core/ResourceManager.h>
 #include <glm/glm.hpp>
 #include <core/stb_image.h>
+#include "Sprite.h"
 
 
 #include "TestApplication.h"
@@ -70,10 +70,10 @@ namespace engine
 		// Clear screen with pulsating yellow: 
 		graphics->clearScreen(val, val * 1.5f, val * 0.5f, true);
 		
-		if (m_inputManager->getArrowKeyY() > 0.0f) { spriteYCoord -= 5.0f; }
-		if (m_inputManager->getArrowKeyY() < 0.0f) { spriteYCoord += 5.0f; }
-		if (m_inputManager->getArrowKeyX() > 0.0f) { spriteXCoord += 5.0f; }
-		if (m_inputManager->getArrowKeyX() < 0.0f) { spriteXCoord -= 5.0f; }
+		if (m_inputManager->getArrowKeyY() > 0.0f) { spriteYCoord -= 3.0f; }
+		if (m_inputManager->getArrowKeyY() < 0.0f) { spriteYCoord += 3.0f; }
+		if (m_inputManager->getArrowKeyX() > 0.0f) { spriteXCoord += 3.0f; }
+		if (m_inputManager->getArrowKeyX() < 0.0f) { spriteXCoord -= 3.0f; }
 		glm::vec2 coords = glm::vec2(spriteXCoord, spriteYCoord);
 		coords = m_camera->convertScreenToWorld(coords);
 		
@@ -82,8 +82,6 @@ namespace engine
 		auto shaderProg = graphics->getShader(0);
 
 		shaderProg->use();
-		
-		
 
 		static Sprite foo = Sprite(50.0f, 50.0f, "mr_t.png", 4, m_assetManager);
 		foo.position.x = coords.x;
@@ -95,7 +93,7 @@ namespace engine
 		glUniform1i(pLocation, 0);
 
 		glm::mat4 cameraMatrix = m_camera->getCameraMatrix();
-		m_camera->setScale(0.10f);
+		m_camera->setScale(0.30f);
 
 		glUniformMatrix4fv(pLocation, 1, GL_FALSE, &(cameraMatrix[0][0]));
 
