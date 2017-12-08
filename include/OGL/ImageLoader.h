@@ -9,7 +9,7 @@ namespace engine {
 	class ImageLoader  {
 	public:
 
-		static Texture2D loadPNG(std::string filepath, int width, int height, int bytesPerPixel, void* manager);
+		static Texture2D loadPNG(std::string filepath, int &width, int &height, int &bytesPerPixel, void* manager);
 
 	};
 }

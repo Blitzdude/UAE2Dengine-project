@@ -37,28 +37,16 @@ namespace engine
 
 	void TestApplication::init()
 	{
-		
 		initShaders();
 		// create camera and initilize it
 		m_camera = new Camera2D();
 		m_camera->init(getWindow()->getWidth(), getWindow()->getHeight());
-		// create Spritebatch and initialize it
-		m_spriteBatch = new SpriteBatch();
-		m_spriteBatch->init();
-		
-		
-
 	}
 
 	void TestApplication::initShaders()
 	{
 		getGraphicsSystem()->createNewShader("Shaders/VertexShader.vert", "Shaders/FragmentShader.frag", m_assetManager); // indexed at 0
 		auto shaderPtr = getGraphicsSystem()->getShader(0);
-
-		shaderPtr->addAttribute("vPosition");
-		shaderPtr->addAttribute("vTexCoord");
-
-
 		shaderPtr->linkShaders();
 
 	}
@@ -82,9 +70,6 @@ namespace engine
 		// Clear screen with pulsating yellow: 
 		graphics->clearScreen(val, val * 1.5f, val * 0.5f, true);
 		
-		glActiveTexture(GL_TEXTURE0);
-
-		//glm::vec2 coords = glm::vec2(m_inputManager->getMouseX(), m_inputManager->getMouseY());
 		if (m_inputManager->getArrowKeyY() > 0.0f) { spriteYCoord -= 5.0f; }
 		if (m_inputManager->getArrowKeyY() < 0.0f) { spriteYCoord += 5.0f; }
 		if (m_inputManager->getArrowKeyX() > 0.0f) { spriteXCoord += 5.0f; }
@@ -94,38 +79,28 @@ namespace engine
 		
 		(void)window;	
 		
-
-
 		auto shaderProg = graphics->getShader(0);
 
 		shaderProg->use();
+		
+		
+
+		static Sprite foo = Sprite(50.0f, 50.0f, "mr_t.png", 4, m_assetManager);
+		foo.position.x = coords.x;
+		foo.position.y = coords.y;
+		// draw code goes here
 
 		//setCamera matrix
-		GLint pLocation = shaderProg->getUniformLocation("MVP");
+		GLint pLocation = shaderProg->getUniformLocation("u_mvpMatrix");
 		glUniform1i(pLocation, 0);
 
 		glm::mat4 cameraMatrix = m_camera->getCameraMatrix();
+		m_camera->setScale(0.10f);
 
 		glUniformMatrix4fv(pLocation, 1, GL_FALSE, &(cameraMatrix[0][0]));
 
-		m_spriteBatch->begin();
+		foo.draw(shaderProg);
 
-		glm::vec4 position(coords.x, coords.y, 100.0f, 100.0f);
-		glm::vec4 uv(0.0f, 0.0f, 1.0f, 1.0f);
-		
-		//create textures
-		int w = 5, h = 5;
-		static Texture2D fooTexture = ResourceManager::createTexture("mr_t.png", w, h, 4, m_assetManager);
-		ColorRGBA8 color(255, 255, 255, 255);
-		m_spriteBatch->draw(position, uv, fooTexture.id, 0.0f, color);
-		
-
-		m_spriteBatch->end();
-
-		m_spriteBatch->renderBatch();
-
-		// unbind the texture
-		glBindTexture(GL_TEXTURE_2D, 0);
 		shaderProg->unUse();
 		
 		// set OpenGL drawing window display to entire window.
@@ -138,4 +113,5 @@ namespace engine
 	void TestApplication::processInput(Window* window)
 	{
 	}
+
 }

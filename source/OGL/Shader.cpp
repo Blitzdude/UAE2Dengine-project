@@ -148,22 +148,22 @@ namespace engine {
 
 	GLuint Shader::getUniformLocation(const char * const uniformName)
 	{
-		GLuint location = glGetUniformLocation(m_programId, uniformName);
-		if (location == ERROR_INVALID_INDEX) {
+		GLint location = glGetUniformLocation(m_programId, uniformName);
+		if (location == -1) {
 			LOGE("Uniform %s not found in shader!", uniformName);
 			return NULL;
 		}
-		return location;
+		return (GLuint)location;
 	}
 
 	GLuint Shader::getAttributeLocation(const char * const attributeName)
 	{
-		GLuint location = glGetAttribLocation(m_programId, attributeName);
-		if (location == ERROR_INVALID_INDEX) {
+		GLint location = glGetAttribLocation(m_programId, attributeName);
+		if (location == -1) {
 			LOGE("Attribute %s not found in shader!", attributeName);
 			return NULL;
 		}
-		return location;
+		return (GLuint)location;
 	}
 
 	void Shader::dispose()

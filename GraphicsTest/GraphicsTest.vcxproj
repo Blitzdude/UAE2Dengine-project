@@ -85,9 +85,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Sprite.h" />
     <ClInclude Include="TestApplication.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="win32_main.cpp" />
     <ClCompile Include="TestApplication.cpp" />
   </ItemGroup>

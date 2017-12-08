@@ -1,7 +1,6 @@
 #include "core/SpriteBatch.h"
 
 #include <algorithm>
-#include <GLES2/gl2ext.h>
 #include <glm/gtc/matrix_transform.hpp>
 
 namespace engine {
@@ -70,8 +69,10 @@ namespace engine {
 		return newv;
 	}
 
-	SpriteBatch::SpriteBatch() : m_vbo(0), m_vao(0)
+	
+	SpriteBatch::SpriteBatch(Shader * program) : m_vbo(0)
 	{
+		m_program = program;
 	}
 
 	SpriteBatch::~SpriteBatch()
@@ -85,10 +86,7 @@ namespace engine {
 	}
 	void SpriteBatch::dispose()
 	{
-		if (m_vao != 0) {
-			glDeleteVertexArraysOES(1, &m_vao);
-			m_vao = 0;
-		}
+		
 		if (m_vbo != 0) {
 			glDeleteBuffers(1, &m_vbo);
 			m_vbo = 0;
@@ -140,20 +138,26 @@ namespace engine {
 
 	void SpriteBatch::renderBatch()
 	{
-		// Bind our VAO. This sets up the opengl state we need, including the 
-		// vertex attribute pointers and it binds the VBO
-		glBindVertexArrayOES(m_vao); 
+		if (m_glyphs.size() <= 0)
+			return;
+
+		m_program->use();
+		// get attributes
+		GLuint vertexLoc = m_program->getAttributeLocation("a_vertexPosition");
+		GLuint textureLoc = m_program->getAttributeLocation("a_texCoord");
+
+		// get uniforms
+		GLuint textureSamplerLoc = m_program->getUniformLocation("u_textureSampler");
+		GLuint uniformMVPLoc = m_program->getUniformLocation("u_mvpMatrix");
 
 		for (size_t i = 0; i < m_renderBatches.size(); i++) {
 
-			
-			glBindTexture(GL_TEXTURE_2D, m_renderBatches[i].texture);
+			glEnableVertexAttribArray(vertexLoc);
 
 			
 			glDrawArrays(GL_TRIANGLES, m_renderBatches[i].offset, m_renderBatches[i].numVertices);
 		}
 
-		glBindVertexArrayOES(0);
 	}
 
 	void SpriteBatch::createRenderBatches()
@@ -171,7 +175,7 @@ namespace engine {
 		int offset = 0; // current offset
 		int cv = 0; // current vertex
 
-					//Add the first batch
+		//Add the first batch
 		m_renderBatches.emplace_back(offset, 6, m_glyphPointers[0]->texture);
 		vertices[cv++] = m_glyphPointers[0]->topLeft;
 		vertices[cv++] = m_glyphPointers[0]->bottomLeft;
@@ -215,24 +219,12 @@ namespace engine {
 	}
 	void SpriteBatch::createVertexArray()
 	{
-		// Generate the VAO if it isn't already generated
-		if (m_vao == 0) {
-			glGenVertexArraysOES(1, &m_vao);
-		}
-
-		// Bind the VAO. All subsequent opengl calls will modify it's state.
-		glBindVertexArrayOES(m_vao);
-
 		//Generate the VBO if it isn't already generated
 		if (m_vbo == 0) {
 			glGenBuffers(1, &m_vbo);
 		}
 		glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
 
-		//Tell opengl what attribute arrays we need
-		glEnableVertexAttribArray(0);
-		glEnableVertexAttribArray(1);
-		glEnableVertexAttribArray(2);
 
 		//This is the position attribute pointer
 		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, position));
@@ -241,7 +233,10 @@ namespace engine {
 		//This is the UV attribute pointer
 		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, uv));
 
-		glBindVertexArrayOES(0);
+		//Tell opengl what attribute arrays we need
+		glEnableVertexAttribArray(0);
+		glEnableVertexAttribArray(1);
+		glEnableVertexAttribArray(2);
 	}
 
 	void SpriteBatch::sortGlyphs()

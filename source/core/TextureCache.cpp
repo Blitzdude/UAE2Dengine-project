@@ -12,7 +12,7 @@ engine::TextureCache::~TextureCache()
 {
 }
 
-Texture2D TextureCache::getTexture(std::string texturePath)
+Texture2D* TextureCache::getTexture(std::string texturePath)
 {
 	// lookup the texture and see if its in the map
 	auto mit = m_textureMap.find(texturePath);
@@ -20,13 +20,14 @@ Texture2D TextureCache::getTexture(std::string texturePath)
 	// check if its not in the map
 	if (mit == m_textureMap.end()) {
 		LOGE("Texture not found in cache!: %s", texturePath.c_str());
+		return nullptr;
 	}
 	// if it is:
 
-	return mit->second;
+	return &(mit->second);
 }
 
-Texture2D TextureCache::createTexture(std::string texturePath, int width, int height, int bytesPerPixel, void* manager)
+void TextureCache::createTexture(std::string texturePath, int& width, int& height, int bytesPerPixel, void* manager)
 {
 	//lookup the texture and see if its in the map
 	auto mit = m_textureMap.find(texturePath);
@@ -35,17 +36,17 @@ Texture2D TextureCache::createTexture(std::string texturePath, int width, int he
 	if (mit == m_textureMap.end()) {
 		//Load the texture
 		Texture2D newTexture = ImageLoader::loadPNG(texturePath, width, height, bytesPerPixel, manager);
-
+		
 		//Insert it into the map
 		m_textureMap.insert(make_pair(texturePath, newTexture));
 
 		LOGI("Texture inserted into cache! %s", texturePath.c_str());
-		return newTexture;
+		
 	}
 	else 
 	{
 		LOGI("Texture with path: %s already exists", texturePath.c_str());
-		return mit->second;
+		
 	}
 }
 

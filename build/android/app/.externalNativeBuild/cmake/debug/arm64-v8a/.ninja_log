@@ -1,0 +1,24 @@
+# ninja log v5
+2	1254	0	CMakeFiles/app-glue.dir/C_/Users/joelkan/AppData/Local/Android/Sdk/ndk-bundle/sources/android/native_app_glue/android_native_app_glue.c.o	da70495cdaee2edc
+1254	1602	0	libapp-glue.a	6f4ecf856452efc9
+1650	2757	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/core/InputManager.cpp.o	12d790c25ba4b349
+1614	2806	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/OGL/OGL.cpp.o	aec669abb30f6798
+1638	2817	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/core/ElapsedTimer.cpp.o	11d45ed9184dadf6
+1628	3370	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/core/Camera2D.cpp.o	a8110ccefaa2053
+1602	3413	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/android/AndroidWindow.cpp.o	5a0c3f2981d3f15f
+2757	3764	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/core/Object.cpp.o	190abfa72af30af3
+2807	3948	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/core/ResourceManager.cpp.o	70f46e9b7effb289
+1610	4072	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/OGL/ImageLoader.cpp.o	4148df245f95f1a2
+1642	4178	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/core/IOManager.cpp.o	278e785000e07e23
+3371	4658	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/core/TextureCache.cpp.o	ef877af2855c1a25
+1618	4817	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/graphics/GraphicsApplication.cpp.o	280757cc61720bd4
+1607	4831	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/OGL/OGLGraphicsSystem.cpp.o	7f19646d059c7805
+3949	4836	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/graphics/Window.cpp.o	2a28b38a637d81da
+2817	4950	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/core/SpriteBatch.cpp.o	34271ee65432dd69
+3414	5060	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/graphics/GraphicsSystem.cpp.o	dbecc856762e7610
+3764	5414	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/GraphicsTest/TestApplication.cpp.o	7ca982de01c15ea0
+5	895	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/OGL/Shader.cpp.o	d8ef08662968e6fa
+10	1259	0	CMakeFiles/native-activity.dir/main.cpp.o	cc8382a6196e1283
+1260	1902	0	C:/Users/joelkan/Desktop/UAE2dEngine-repository/build/android/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	9e409d6c12a320c5
+3	791	0	CMakeFiles/native-activity.dir/C_/Users/joelkan/Desktop/UAE2dEngine-repository/source/OGL/Shader.cpp.o	d8ef08662968e6fa
+791	1228	0	C:/Users/joelkan/Desktop/UAE2dEngine-repository/build/android/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-activity.so	9e409d6c12a320c5

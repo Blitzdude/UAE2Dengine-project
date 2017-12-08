@@ -13,9 +13,8 @@
 #include <OGL/Shader.h>
 #include <core/InputManager.h>
 #include <core/Camera2D.h>
-#include <core/SpriteBatch.h>
 #include <graphics/Texture2D.h>
-
+#include "Sprite.h"
 #include <vector>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -53,7 +52,6 @@ namespace engine {
 		void* 					m_assetManager;
 		InputManager*			m_inputManager;
 		Camera2D*				m_camera;
-		SpriteBatch*			m_spriteBatch;
 		float					spriteXCoord;
 		float					spriteYCoord;
 	};

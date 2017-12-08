@@ -4,6 +4,7 @@
 #include "core/Object.h"
 #include <GLES2/gl2.h>
 #include <glm/common.hpp>
+#include <OGL/Shader.h>
 #include "graphics/Vertex.h"
 #include <vector>
 
@@ -50,7 +51,8 @@ namespace engine {
 
 	class SpriteBatch : public Object {
 	public:
-		SpriteBatch();
+		
+		SpriteBatch(Shader* program);
 		~SpriteBatch();
 
 		// Initializes the spritebatch
@@ -90,8 +92,7 @@ namespace engine {
 
 	private: // attributes
 		GLuint m_vbo;
-		GLuint m_vao;
-
+		Shader* m_program;
 		GlyphSortType m_sortType;
 
 		std::vector<Glyph*> m_glyphPointers; ///< This is for sorting

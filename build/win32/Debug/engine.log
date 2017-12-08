@@ -1,1 +1,3 @@
-﻿  engine.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib
+﻿  ImageLoader.cpp
+c:\users\joelkan\desktop\uae2dengine-repository\source\ogl\imageloader.cpp(18): warning C4100: 'manager': unreferenced formal parameter
+  engine.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib
