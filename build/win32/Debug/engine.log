@@ -4,7 +4,6 @@ c:\users\joel\desktop\uae2dengine-repository\source\win32\win32window.cpp(19): w
 c:\users\joel\desktop\uae2dengine-repository\source\win32\win32window.cpp(18): warning C4101: 'ptWindowUL': unreferenced local variable
 c:\users\joel\desktop\uae2dengine-repository\source\win32\win32window.cpp(17): warning C4101: 'windowRect': unreferenced local variable
   ImageLoader.cpp
-c:\users\joel\desktop\uae2dengine-repository\source\ogl\imageloader.cpp(18): warning C4100: 'manager': unreferenced formal parameter
   Shader.cpp
   OGLGraphicsSystem.cpp
 c:\users\joel\desktop\uae2dengine-repository\include\glm\detail\type_vec2.hpp(45): warning C4201: nonstandard extension used: nameless struct/union

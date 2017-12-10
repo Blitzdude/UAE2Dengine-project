@@ -17,11 +17,19 @@
 namespace engine {
 	Texture2D ImageLoader::loadPNG(std::string filepath, int &width, int &height, int &bytesPerPixel, void* manager)
 	{
-#if defined (_WIN32)
+//#if defined (_WIN32) TODO: delete
 		// create Texture2D and initialize its fields to zero
 		Texture2D texture = {};
 		
-		unsigned char* out = stbi_load(filepath.c_str(), &width, &height, &bytesPerPixel, 4);
+		std::vector<unsigned char> in;
+
+		if (!IOManager::readFileToBuffer(filepath, in, manager)) {
+			LOGE("Failed to load PNG file to Buffer! %s", filepath.c_str());
+			return texture;
+		}
+		
+		//unsigned char* out = stbi_load(filepath.c_str(), &width, &height, &bytesPerPixel, 4); TODO: delete
+		unsigned char* out = stbi_load_from_memory(in.data(), in.size(), &width, &height, &bytesPerPixel, 4);
 
 		// Generate the openGL texture object
 		glGenTextures(1, &(texture.id));
@@ -58,7 +66,8 @@ namespace engine {
 
 		return texture;
 	}
-#elif (ANDROID)
+	/*
+#elif (ANDROID) TODO: delete
 		// create Texture2D and initialize its fields to zero
 		Texture2D texture = {};
 
@@ -74,8 +83,7 @@ namespace engine {
 
 
 		// Decode the png using stbi_load_from_memmory
-		int stb_fmt = bytesPerPixel == 3 ? STBI_rgb : STBI_rgb_alpha; // format depending on bit Depth
-		unsigned char* out = stbi_load_from_memory((unsigned char*)in.c_str(), sizeof(in), &width, &height, &bytesPerPixel, stb_fmt);
+		unsigned char* out = stbi_load_from_memory((unsigned char*)in.c_str(), sizeof(in), &width, &height, &bytesPerPixel, 4);
 
 		// Generate the openGL texture object
 		glGenTextures(1, &(texture.id));
@@ -106,3 +114,4 @@ namespace engine {
 }
 #endif
 }
+	*/

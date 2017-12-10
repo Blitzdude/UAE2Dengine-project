@@ -21,7 +21,6 @@ namespace engine {
         std::ifstream file(filePath, std::ios::binary); // open file
         if (file.fail()) { // error check
 			LOGI("failed to open %s : ", filePath.c_str());
-          //  perror(filePath.c_str());
             return false;
         }
 
@@ -68,6 +67,7 @@ namespace engine {
 
         return true;
     }
+
 	bool IOManager::readFileToBuffer(std::string filePath, unsigned char * buffer, void * manager)
 	{
 		(void)manager;
