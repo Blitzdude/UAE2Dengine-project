@@ -52,8 +52,7 @@ namespace engine {
 		void* 					m_assetManager;
 		InputManager*			m_inputManager;
 		Camera2D*				m_camera;
-		float					spriteXCoord;
-		float					spriteYCoord;
+		std::vector<Sprite>		m_sprites;
 	};
 
 }

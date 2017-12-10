@@ -11,15 +11,17 @@
 class Sprite
 {
 public:
-	Sprite(float x, float y, std::string texturePath, int bytesPerPixel, void* manager);
+	Sprite(float x, float y, std::string texturePath, void* manager);
 	~Sprite();
 
 	void draw(engine::Shader* program);
-	
+
+
 	glm::vec2 position;
+private:
 	
-	int bytesPerPixel;
-	engine::Texture2D* texture;
+	int m_bytesPerPixel;
+	engine::Texture2D m_texture;
 
 };
 #endif // !_SPRITE_H_

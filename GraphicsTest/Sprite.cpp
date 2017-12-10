@@ -2,19 +2,15 @@
 #include <core/ResourceManager.h>
 
 
-Sprite::Sprite(float x, float y, std::string texturePath, int bytesPerPixel, void* manager)
+Sprite::Sprite(float x, float y, std::string texturePath, void* manager)
 {
 	position.x = x;
 	position.y = y;
 	
-	int w, h;
 
-	engine::ResourceManager::createTexture(texturePath, w, h, bytesPerPixel, manager);
-	texture = engine::ResourceManager::getTexture(texturePath);
+	m_texture = engine::ResourceManager::getTexture(texturePath, m_texture.width, m_texture.height, m_bytesPerPixel, manager);
 	
-	texture->width = w;
-	texture->height = h;
-	LOGI("width: %d, height: %d\n", (int)texture->width, (int)texture->height);
+	LOGI("width: %d, height: %d, bpp: %d \n", (int)m_texture.width, (int)m_texture.height, m_bytesPerPixel);
 }
 
 
@@ -31,13 +27,13 @@ void Sprite::draw(engine::Shader* program)
 	GLuint posCoordLoc = program->getAttributeLocation("a_vertexPosition");
 
 	GLfloat vertices[] = {
-		position.x + 0.0f, position.y + texture->height, depth,			// vertex 0
-		position.x + 0.0f, position.y + 0.0f, depth,					// vertex 1
-		position.x + texture->width, position.y + 0.0f, depth,			// vertex 2
+		position.x + 0.0f,				position.y + m_texture.height,	depth,		// vertex 0
+		position.x + 0.0f,				position.y + 0.0f,				depth,		// vertex 1
+		position.x + m_texture.width,	position.y + 0.0f,				depth,		// vertex 2
 
-		position.x + texture->width, position.y + texture->height, depth,	// vertex 3
-		position.x + texture->width, position.y + 0.0f, depth,				// vertex 4
-		position.x + 0.0f, position.y + texture->height, depth,				// vertex 5
+		position.x + m_texture.width,	position.y + m_texture.height,	depth,		// vertex 3
+		position.x + m_texture.width,	position.y + 0.0f,				depth,		// vertex 4
+		position.x + 0.0f,				position.y + m_texture.height,	depth,		// vertex 5
 
 	};
 
@@ -61,7 +57,7 @@ void Sprite::draw(engine::Shader* program)
 	// bind texture location
 	
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texture->id);
+	glBindTexture(GL_TEXTURE_2D, m_texture.id);
 	
 
 	//draw vertex array as triangles
