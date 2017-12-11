@@ -1,9 +1,10 @@
 #version 100
-attribute vec4 vPosition;
-attribute vec2 vTexCoord;
-varying vec2 texCoord;
-void main() 
+attribute vec4 a_vertexPosition;
+attribute vec2 a_texCoord;
+uniform mat4 u_mvpMatrix;
+varying vec2 v_texCoord;
+void main()
 {
-	gl_Position = vPosition;
-	texCoord = vTexCoord;
+	gl_Position = u_mvpMatrix * a_vertexPosition;
+	v_texCoord = a_texCoord;
 }

@@ -198,6 +198,12 @@ Project_BINARY_DIR:STATIC=C:/Users/Joel/Desktop/UAE2dEngine-repository/build/and
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=C:/Users/Joel/Desktop/UAE2dEngine-repository/build/android/app/src/main/cpp
 
+//Dependencies for target
+app-glue_LIB_DEPENDS:STATIC=
+
+//Dependencies for the target
+native-activity_LIB_DEPENDS:STATIC=general;android;general;app-glue;general;EGL;general;GLESv2;general;log;
+
 
 ########################
 # INTERNAL cache entries

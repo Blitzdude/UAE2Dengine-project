@@ -94,6 +94,20 @@ int32_t AndroidEngine::onInput(struct android_app* app, AInputEvent* event)
 
                 // TODO: send pointerId, x, y to the input system;
                 engine->window->getInputManager()->setMouseCoords(x,y);
+
+                if (x < engine->window->getWidth() / 2.0f) {
+                    engine->window->getInputManager()->setArrowKeyValues(-1.0f, 0.0f);
+                }
+                else if(x > engine->window->getWidth() / 2.0f) {
+                    engine->window->getInputManager()->setArrowKeyValues(1.0f, 0.0f);
+                }
+
+                if (y < engine->window->getHeight() / 3.0f) {
+                    engine->window->getInputManager()->setArrowKeyValues(0.0f, 1.0f);
+                }
+                else if(y > (engine->window->getHeight() * 2) / 3.0f) {
+                    engine->window->getInputManager()->setArrowKeyValues(0.0f, -1.0f);
+                }
             }
         }
             return 1;
