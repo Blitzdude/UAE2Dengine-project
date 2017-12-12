@@ -18,7 +18,39 @@
 
 namespace engine
 {
-	const float SPEED = 3.0f;
+	const float SPEED = 20.0f;
+
+	//Collision Detect Function
+	void TestApplication::DetectCollidingObjects()
+	{
+		/*printf("Car PositionX %f \n", m_sprites[0].position.x); 
+		printf("Car PositionY %f \n", m_sprites[0].position.y);
+		printf("Mr T PositionX %f \n", m_sprites[1].position.x);
+		printf("Mr T PositionY %f \n", m_sprites[1].position.y);
+		printf("Car DimensionsX %f \n", m_sprites[0].dimensions.x);
+		printf("Car DimensionsY %f \n", m_sprites[0].dimensions.y);
+		printf("Mr T DimensionsX %f \n", m_sprites[1].dimensions.x);
+		printf("Mr T DimensionsY %f \n", m_sprites[1].dimensions.y);*/
+		for (int a = 0; a < m_sprites.size(); a++)
+		{
+			for (int b = a+1; b < m_sprites.size(); b++)
+			{
+				if (m_sprites[a].position.x < m_sprites[b].position.x + m_sprites[b].dimensions.x && 
+					m_sprites[a].position.x + m_sprites[a].dimensions.x > m_sprites[b].position.x && 
+					m_sprites[a].position.y < m_sprites[b].position.y + m_sprites[b].dimensions.y && 
+					m_sprites[a].position.y + m_sprites[a].dimensions.y > m_sprites[b].position.y)
+				{
+					printf("Collision Detected! \n");
+					m_sprites.erase(m_sprites.begin() + b);
+				}
+				else
+				{
+					//printf("Collision Not Detected! \n");
+				}
+			}
+		}
+	}
+
 
 	TestApplication::TestApplication( Window * window, GraphicsSystem * graphics, InputManager* inputMgr, void * manager /* = nullptr */)
             : GraphicsApplication(window, graphics)
@@ -43,9 +75,9 @@ namespace engine
 		m_camera->init(getWindow()->getWidth(), getWindow()->getHeight());
 
 		// init sprites
-		Sprite foo = Sprite(50.0f, 50.0f, "mr_t.png", m_assetManager);
+		Sprite foo = Sprite(-300.0f, 50.0f, "NissanSkyline.png", m_assetManager);
 		m_sprites.push_back(foo);
-		Sprite foo2 = Sprite(200.0f, 50.0f, "mr_t.png", m_assetManager);
+		Sprite foo2 = Sprite(300.0f, 0.0f, "mr_t.png", m_assetManager);
 		m_sprites.push_back(foo2);
 	}
 
@@ -61,6 +93,9 @@ namespace engine
 	{
 		m_totalTime += deltaTime;
 		processInput(getWindow());
+
+		//Check Collision
+		DetectCollidingObjects();
 
 		m_camera->update();
 		
@@ -112,28 +147,44 @@ namespace engine
 
 	void TestApplication::processInput(Window* window)
 	{
-		if (m_inputManager->getArrowKeyY() > 0.0f) { 
-			for (unsigned int i = 0; i < m_sprites.size(); i++) {
+		/*if (m_inputManager->getArrowKeyY() > 0.0f) { 
+			m_sprites[0].position.y += 1.0f * SPEED;
+			/*for (unsigned int i = 0; i < m_sprites.size(); i++) {
 				m_sprites[i].position.y += 1.0f * SPEED;
 			}
 		}
 		if (m_inputManager->getArrowKeyY() < 0.0f) { 
-			for (unsigned int i = 0; i < m_sprites.size(); i++) {
+			m_sprites[0].position.y -= 1.0f * SPEED;
+			/*for (unsigned int i = 0; i < m_sprites.size(); i++) {
 				m_sprites[i].position.y -= 1.0f * SPEED;
 			}
 		}
 		if (m_inputManager->getArrowKeyX() > 0.0f) {
-			for (unsigned int i = 0; i < m_sprites.size(); i++) {
+			m_sprites[0].position.x += 1.0f * SPEED;
+			/*for (unsigned int i = 0; i < m_sprites.size(); i++) {
 				m_sprites[i].position.x += 1.0f * SPEED;
 			}
 		}
 		if (m_inputManager->getArrowKeyX() < 0.0f) {
-			for (unsigned int i = 0; i < m_sprites.size(); i++) {
+			m_sprites[0].position.x -= 1.0f * SPEED;
+			/*for (unsigned int i = 0; i < m_sprites.size(); i++) {
 				m_sprites[i].position.x -= 1.0f * SPEED;
 			}
-		}
+		}*/
 
-		
+		//InputManager Ver 2.0
+		if (m_inputManager->getKeyPressedValue(0)){
+			m_sprites[0].position.y += 1.0f * SPEED;
+		}
+		if (m_inputManager->getKeyPressedValue(2)) {
+			m_sprites[0].position.y -= 1.0f * SPEED;
+		}
+		if (m_inputManager->getKeyPressedValue(1)) {
+			m_sprites[0].position.x += 1.0f * SPEED;
+		}
+		if (m_inputManager->getKeyPressedValue(3)) {
+			m_sprites[0].position.x -= 1.0f * SPEED;
+		}
 	}
 
 }

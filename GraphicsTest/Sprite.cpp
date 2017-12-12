@@ -10,6 +10,9 @@ Sprite::Sprite(float x, float y, std::string texturePath, void* manager)
 
 	m_texture = engine::ResourceManager::getTexture(texturePath, m_texture.width, m_texture.height, m_bytesPerPixel, manager);
 	
+	dimensions.x = m_texture.width;
+	dimensions.y = m_texture.height;
+
 	LOGI("width: %d, height: %d, bpp: %d \n", (int)m_texture.width, (int)m_texture.height, m_bytesPerPixel);
 }
 

@@ -95,16 +95,20 @@ namespace engine
 			switch (wParam)
 			{
 			case VK_UP:
-				window->getInputManager()->setArrowKeyValues(0.0f, 1.0f);
+				//window->getInputManager()->setArrowKeyValues(0.0f, 1.0f);
+				window->getInputManager()->setKeyPressedValues(0, true);
 				break;
 			case VK_RIGHT:
-				window->getInputManager()->setArrowKeyValues(1.0f, 0.0f);
+				//window->getInputManager()->setArrowKeyValues(1.0f, 0.0f);
+				window->getInputManager()->setKeyPressedValues(1, true);
 				break;
 			case VK_DOWN:
-				window->getInputManager()->setArrowKeyValues(0.0f, -1.0f);
+				//window->getInputManager()->setArrowKeyValues(0.0f, -1.0f);
+				window->getInputManager()->setKeyPressedValues(2, true);
 				break;
 			case VK_LEFT:
-				window->getInputManager()->setArrowKeyValues(-1.0f, 0.0f);
+				//window->getInputManager()->setArrowKeyValues(-1.0f, 0.0f);
+				window->getInputManager()->setKeyPressedValues(3, true);
 				break;
 			default:
 				printf("Not ArrowKey Pressed.");
@@ -122,16 +126,20 @@ namespace engine
 			switch (wParam)
 			{
 			case VK_UP:
-				window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				//window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				window->getInputManager()->setKeyPressedValues(0, false);
 				break;
 			case VK_RIGHT:
-				window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				//window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				window->getInputManager()->setKeyPressedValues(1, false);
 				break;
 			case VK_DOWN:
-				window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				//window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				window->getInputManager()->setKeyPressedValues(2, false);
 				break;
 			case VK_LEFT:
-				window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				//window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
+				window->getInputManager()->setKeyPressedValues(3, false);
 				break;
 			}
 			break;

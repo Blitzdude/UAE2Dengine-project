@@ -18,6 +18,7 @@ public:
 
 
 	glm::vec2 position;
+	glm::vec2 dimensions;
 private:
 	
 	int m_bytesPerPixel;

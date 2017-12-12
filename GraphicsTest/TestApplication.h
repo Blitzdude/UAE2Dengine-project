@@ -46,6 +46,9 @@ namespace engine {
 
 		virtual void processInput(Window* window);
 
+		//Collision
+		void DetectCollidingObjects();
+
 	private:
 		
 		float					m_totalTime;

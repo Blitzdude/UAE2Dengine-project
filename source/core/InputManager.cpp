@@ -38,4 +38,13 @@ namespace engine {
 	float InputManager::getArrowKeyY() {
 		return m_arrowkeyY;
 	}
+
+	void InputManager::setKeyPressedValues(int index, bool value)
+	{
+		keyPressed[index] = value;
+	}
+	bool InputManager::getKeyPressedValue(int index)
+	{
+		return keyPressed[index];
+	}
 }
