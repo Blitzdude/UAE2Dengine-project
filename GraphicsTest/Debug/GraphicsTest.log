@@ -1,9 +1,5 @@
 ﻿  TestApplication.cpp
-f:\uae2dengine_repofile\uae2dengine-repository\graphicstest\testapplication.cpp(34): warning C4018: '<': signed/unsigned mismatch
-f:\uae2dengine_repofile\uae2dengine-repository\graphicstest\testapplication.cpp(36): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Compiling...
-  win32_main.cpp
-  Generating Code...
-  GraphicsTest.vcxproj -> F:\UAE2DEngine_repofile\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
-  GraphicsTest.vcxproj -> F:\UAE2DEngine_repofile\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(38): warning C4018: '<': signed/unsigned mismatch
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(40): warning C4018: '<': signed/unsigned mismatch
+  GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
+  GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)

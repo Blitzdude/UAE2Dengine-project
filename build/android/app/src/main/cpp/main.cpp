@@ -95,18 +95,36 @@ int32_t AndroidEngine::onInput(struct android_app* app, AInputEvent* event)
                 // TODO: send pointerId, x, y to the input system;
                 engine->window->getInputManager()->setMouseCoords(x,y);
 
-                if (x < engine->window->getWidth() / 2.0f) {
-                    engine->window->getInputManager()->setArrowKeyValues(-1.0f, 0.0f);
-                }
-                else if(x > engine->window->getWidth() / 2.0f) {
-                    engine->window->getInputManager()->setArrowKeyValues(1.0f, 0.0f);
-                }
+                if (AMotionEvent_getAction(event) != AMOTION_EVENT_ACTION_UP) {
 
-                if (y < engine->window->getHeight() / 3.0f) {
-                    engine->window->getInputManager()->setArrowKeyValues(0.0f, 1.0f);
+                    if (x < engine->window->getWidth() / 3.0f) {
+                       engine->window->getInputManager()->setKeyPressedValues(3, true);
+                       engine->window->getInputManager()->setKeyPressedValues(1, false);
+
+                    }
+                    else if(x > engine->window->getWidth() * 2.0f / 3.0f) {
+                       engine->window->getInputManager()->setKeyPressedValues(1, true);
+                       engine->window->getInputManager()->setKeyPressedValues(3, false);
+
+                    }
+
+                    if (y < engine->window->getHeight() / 3.0f) {
+                        engine->window->getInputManager()->setKeyPressedValues(0, true);
+                        engine->window->getInputManager()->setKeyPressedValues(2, false);
+                    }
+                    else if(y > (engine->window->getHeight() * 2.0f) / 3.0f) {
+                        engine->window->getInputManager()->setKeyPressedValues(2, true);
+                        engine->window->getInputManager()->setKeyPressedValues(0, false);
+                    }
+
                 }
-                else if(y > (engine->window->getHeight() * 2) / 3.0f) {
-                    engine->window->getInputManager()->setArrowKeyValues(0.0f, -1.0f);
+                else {
+                    // clear input
+                    engine->window->getInputManager()->setKeyPressedValues(0, false);
+                    engine->window->getInputManager()->setKeyPressedValues(1, false);
+                    engine->window->getInputManager()->setKeyPressedValues(2, false);
+                    engine->window->getInputManager()->setKeyPressedValues(3, false);
+
                 }
             }
         }
@@ -120,6 +138,7 @@ int32_t AndroidEngine::onInput(struct android_app* app, AInputEvent* event)
         case AINPUT_EVENT_TYPE_KEY: {
         }
             break;
+
     }
 
 

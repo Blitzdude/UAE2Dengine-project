@@ -18,7 +18,11 @@
 
 namespace engine
 {
+
 	const float SPEED = 20.0f;
+
+	//prototypes
+	void drawBackground();
 
 	//Collision Detect Function
 	void TestApplication::DetectCollidingObjects()
@@ -75,7 +79,7 @@ namespace engine
 		m_camera->init(getWindow()->getWidth(), getWindow()->getHeight());
 
 		// init sprites
-		Sprite foo = Sprite(-300.0f, 50.0f, "NissanSkyline.png", m_assetManager);
+		Sprite foo = Sprite(-300 , 50.0f, "NissanSkyline.png", m_assetManager);
 		m_sprites.push_back(foo);
 		Sprite foo2 = Sprite(300.0f, 0.0f, "mr_t.png", m_assetManager);
 		m_sprites.push_back(foo2);
@@ -105,6 +109,9 @@ namespace engine
 
 	void TestApplication::render(Window* window, GraphicsSystem* graphics)
 	{
+		// set OpenGL drawing window display to entire window.
+		glViewport(0, 0, window->getWidth(), window->getHeight());
+
 		float val = fabsf(sinf(2.0f*m_totalTime));
 		// set the base depth to 1.0f		
 		glClearDepthf(1.0f);
@@ -120,13 +127,15 @@ namespace engine
 		shaderProg->use();
 
 		// draw code goes here
-
+		drawBackground();
 		//setCamera matrix
 		GLint pLocation = shaderProg->getUniformLocation("u_mvpMatrix");
 		glUniform1i(pLocation, 0);
 
 		glm::mat4 cameraMatrix = m_camera->getCameraMatrix();
-		m_camera->setScale(0.20f);
+		m_camera->setScale(0.40f);
+
+
 
 		glUniformMatrix4fv(pLocation, 1, GL_FALSE, &(cameraMatrix[0][0]));
 
@@ -138,8 +147,7 @@ namespace engine
 
 		shaderProg->unUse();
 		
-		// set OpenGL drawing window display to entire window.
-		glViewport(0, 0, window->getWidth(), window->getHeight());
+		
 
 		// switch secondary buffer to be displayed on screen. 
 		graphics->swapBuffers();
@@ -147,44 +155,29 @@ namespace engine
 
 	void TestApplication::processInput(Window* window)
 	{
-		/*if (m_inputManager->getArrowKeyY() > 0.0f) { 
-			m_sprites[0].position.y += 1.0f * SPEED;
-			/*for (unsigned int i = 0; i < m_sprites.size(); i++) {
-				m_sprites[i].position.y += 1.0f * SPEED;
-			}
-		}
-		if (m_inputManager->getArrowKeyY() < 0.0f) { 
-			m_sprites[0].position.y -= 1.0f * SPEED;
-			/*for (unsigned int i = 0; i < m_sprites.size(); i++) {
-				m_sprites[i].position.y -= 1.0f * SPEED;
-			}
-		}
-		if (m_inputManager->getArrowKeyX() > 0.0f) {
-			m_sprites[0].position.x += 1.0f * SPEED;
-			/*for (unsigned int i = 0; i < m_sprites.size(); i++) {
-				m_sprites[i].position.x += 1.0f * SPEED;
-			}
-		}
-		if (m_inputManager->getArrowKeyX() < 0.0f) {
-			m_sprites[0].position.x -= 1.0f * SPEED;
-			/*for (unsigned int i = 0; i < m_sprites.size(); i++) {
-				m_sprites[i].position.x -= 1.0f * SPEED;
-			}
-		}*/
-
+		glm::vec2 cameraCoords = m_camera->getPosition();
 		//InputManager Ver 2.0
 		if (m_inputManager->getKeyPressedValue(0)){
-			m_sprites[0].position.y += 1.0f * SPEED;
+			m_camera->setPosition(glm::vec2(cameraCoords.x, cameraCoords.y + 1.0f * SPEED));
+			//m_sprites[0].position.y += 1.0f * SPEED;
 		}
 		if (m_inputManager->getKeyPressedValue(2)) {
-			m_sprites[0].position.y -= 1.0f * SPEED;
+			m_camera->setPosition(glm::vec2(cameraCoords.x, cameraCoords.y - 1.0f * SPEED));
+			//m_sprites[0].position.y -= 1.0f * SPEED;
 		}
 		if (m_inputManager->getKeyPressedValue(1)) {
-			m_sprites[0].position.x += 1.0f * SPEED;
+			m_camera->setPosition(glm::vec2(cameraCoords.x + 1.0f * SPEED, cameraCoords.y));
+			//m_sprites[0].position.x += 1.0f * SPEED;
 		}
 		if (m_inputManager->getKeyPressedValue(3)) {
-			m_sprites[0].position.x -= 1.0f * SPEED;
+			m_camera->setPosition(glm::vec2(cameraCoords.x - 1.0f * SPEED, cameraCoords.y));
+			//m_sprites[0].position.x -= 1.0f * SPEED;
 		}
+	}
+
+
+	void drawBackground()
+	{
 	}
 
 }
