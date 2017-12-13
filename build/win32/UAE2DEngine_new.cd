@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="engine::Object">
+    <Position X="1.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAQAAAAAgAAAAAAAIAAAAAAAAAAAgAAAACAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\Object.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::IOManager">
+    <Position X="3.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\IOManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::Camera2D">
+    <Position X="13.25" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BgAAIAAYBCAAAKAAAAAEAAACQAIgICIGAAAAAAAEAAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\Camera2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::ElapsedTimer">
+    <Position X="1" Y="4.25" Width="1.5" />
+    <NestedTypes>
+      <Typedef Name="engine::ElapsedTimer::TIME_TYPE" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\ElapsedTimer.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAABAAAEgAAAAAAAAAAAAAAAABAAAAAAAAAAAAMAAAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\ElapsedTimer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::InputManager">
+    <Position X="7" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="engine::Object" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.125" Y="3.017" />
+        <Point X="2.125" Y="3.405" />
+        <Point X="7.812" Y="3.405" />
+        <Point X="7.812" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAhAAAAAgAARAEIAEEAICAAAAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\InputManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::Ref&lt;Type&gt;" Collapsed="true">
+    <Position X="10.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAQAAAgAAAAAAAwAAAAAAAEAAAAAiAAAAAAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\Ref.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::ResourceManager">
+    <Position X="5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\ResourceManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::TextureCache">
+    <Position X="5" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="engine::Object" ManuallyRouted="true">
+      <Path>
+        <Point X="2.125" Y="3.017" />
+        <Point X="2.125" Y="3.368" />
+        <Point X="4.75" Y="3.368" />
+        <Point X="4.75" Y="6.182" />
+        <Point X="5.75" Y="6.182" />
+        <Point X="5.75" Y="6.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAAEAAAAAI=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\TextureCache.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::Window">
+    <Position X="3" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SABAAAAAAAAAACkBEIAAACAAAQAAQACAAAAIiAgAAAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\graphics\Window.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::GraphicsSystem">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAABAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAQAI=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\graphics\GraphicsSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::GraphicsApplication">
+    <Position X="11.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIQAAAEAAAAIAAAAAAAAACAAAAAAAAAAAAAAAAAUAAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\graphics\GraphicsApplication.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::ImageLoader">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\OGL\ImageLoader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::OGLGraphicsSystem">
+    <Position X="8" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAgAQAAAABAAAAAAAAAACAAAAEAACBAABAAgAABAQAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\OGL\OGLGraphicsSystem.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::Shader">
+    <Position X="10.5" Y="8.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QIABAAAAAAAAAAAgAAMAAIBAAAgAAAAABAABEIAAQQA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\OGL\Shader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::AndroidWindow">
+    <Position X="4" Y="10.25" Width="2" />
+    <InheritanceLine Type="engine::Window" ManuallyRouted="true">
+      <Path>
+        <Point X="3.75" Y="8.819" />
+        <Point X="3.75" Y="9.294" />
+        <Point X="5" Y="9.294" />
+        <Point X="5" Y="10.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAACAAgAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\android\AndroidWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="engine::Win32Window">
+    <Position X="1.25" Y="10" Width="1.75" />
+    <InheritanceLine Type="engine::Window" ManuallyRouted="true">
+      <Path>
+        <Point X="3.75" Y="8.819" />
+        <Point X="3.75" Y="9.305" />
+        <Point X="2.125" Y="9.305" />
+        <Point X="2.125" Y="10" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AACAIAAAAAAAACAAAAAAAQAEAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\win32\Win32Window.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="engine::Texture2D">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAEAgA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\graphics\Texture2D.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

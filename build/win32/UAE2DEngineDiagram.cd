@@ -4,7 +4,7 @@
     <Position X="3.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAAACAAgAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\android\AndroidWindow.h</FileName>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\android\AndroidWindow.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="engine::GraphicsApplication" Collapsed="true">
@@ -20,7 +20,7 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>CIQAAAEAAAAIAAAAAAAAACAAAAAAAAAAAAAAAAAUAAA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\graphics\GraphicsApplication.h</FileName>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\graphics\GraphicsApplication.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="engine::GraphicsSystem" Collapsed="true">
@@ -34,8 +34,8 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAAIAAAAAAIAAAAAAAAAAgAAAAAAI=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\graphics\GraphicsSystem.h</FileName>
+      <HashCode>AAgAAAAAABAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAQAI=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\graphics\GraphicsSystem.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="engine::InputManager" Collapsed="true">
@@ -49,29 +49,29 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAAAAAAAABAAAAAgAAQAEAAAAAIAAAAAA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\core\InputManager.h</FileName>
+      <HashCode>AAAAAAAIAAAAAAAAAAAhAAAAAgAARAEIAEEAICAAAAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\InputManager.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="engine::Object" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAQAAAAAgAAAAAAAIAAAAAAAAAAAgAAAACAA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\core\Object.h</FileName>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\Object.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="engine::OGLGraphicsSystem" Collapsed="true">
     <Position X="3.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAQAAAABAAAAAAAIAACAAAAEAACBEABAAgAAAAAQA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\OGL\OGLGraphicsSystem.h</FileName>
+      <HashCode>CAgAQAAAABAAAAAAAAAACAAAAEAACBAABAAgAABAQAA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\OGL\OGLGraphicsSystem.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="engine::Ref&lt;Type&gt;" Collapsed="true">
     <Position X="3.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAQAAAgAAAAAAAwAAAAAAAEAAAAAiAAAAAAA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\core\Ref.h</FileName>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\Ref.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="engine::Shader" Collapsed="true">
@@ -85,65 +85,43 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>QAABAAAAAAAAACAAAAIAAIAAEAgAAAAABAAAEIAAAAA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\OGL\Shader.h</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="engine::Texture2D" Collapsed="true">
-    <Position X="7.25" Y="2.5" Width="1.5" />
-    <InheritanceLine Type="engine::Object" ManuallyRouted="true">
-      <Path>
-        <Point X="1.25" Y="1.062" />
-        <Point X="1.25" Y="2.145" />
-        <Point X="8" Y="2.145" />
-        <Point X="8" Y="2.5" />
-      </Path>
-    </InheritanceLine>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAAAAAAAAAEAAAIAAACAAAgAAAAAAAACA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\OGL\Texture2D.h</FileName>
+      <HashCode>QIABAAAAAAAAAAAgAAMAAIBAAAgAAAAABAABEIAAQQA=</HashCode>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\OGL\Shader.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="engine::Win32Window" Collapsed="true">
     <Position X="1.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAIAAAAAAAACAAAAAAAQAEAAAAABAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\win32\Win32Window.h</FileName>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\win32\Win32Window.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="engine::Window" Collapsed="true">
     <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>SABAAAAAAAAAACkBEIAAACAAAQAAQACAAAAIiAgAAAA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\graphics\Window.h</FileName>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\graphics\Window.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="engine::`anonymous-namespace'::RefCounter" Collapsed="true">
     <Position X="7" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAgAAAAAAAAAAEAAAAAAAAAAgAAAgAAACAAE=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\source\core\Object.cpp</FileName>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\source\core\Object.cpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="engine::IOManager" Collapsed="true">
     <Position X="12.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\include\core\IOManager.h</FileName>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\include\core\IOManager.h</FileName>
     </TypeIdentifier>
   </Class>
   <Typedef Name="engine::`anonymous-namespace'::YAM_TIME_TYPE" Collapsed="true">
-    <Position X="6.75" Y="5.25" Width="2.5" />
+    <Position X="11" Y="0.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\source\core\ElapsedTimer.cpp</FileName>
-    </TypeIdentifier>
-  </Typedef>
-  <Typedef Name="engine::`anonymous-namespace'::YAM_TIME_TYPE" Collapsed="true">
-    <Position X="9.75" Y="5.25" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>C:\Users\joelkan\Desktop\UAE2dEngine-repository\source\core\ElapsedTimer.cpp</FileName>
+      <FileName>C:\Users\JoelKan\Desktop\UAE2dEngine-repository\source\core\ElapsedTimer.cpp</FileName>
     </TypeIdentifier>
   </Typedef>
   <Font Name="Segoe UI" Size="9" />

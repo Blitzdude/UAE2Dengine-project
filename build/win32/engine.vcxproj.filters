@@ -170,5 +170,8 @@
     <None Include="UAE2DEngineDiagram.cd">
       <Filter>Source Files</Filter>
     </None>
+    <None Include="UAE2DEngine_new.cd">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
