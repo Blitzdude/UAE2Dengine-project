@@ -149,8 +149,6 @@ namespace engine
 
 		shaderProg->unUse();
 		
-		
-
 		// switch secondary buffer to be displayed on screen. 
 		graphics->swapBuffers();
 	}

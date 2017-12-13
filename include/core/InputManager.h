@@ -5,6 +5,18 @@
 #include <core/Object.h>
 
 namespace engine {
+	enum buttons {
+		UP,
+		RIGHT,
+		DOWN,
+		LEFT,
+		W,
+		D,
+		S,
+		A,
+		LAST
+	};
+
 	class InputManager : public Object
 	{
 	public:
@@ -41,7 +53,7 @@ namespace engine {
 		Down Arrow Key in 2 index
 		Left Arrow Key in 3 index
 		*/
-		bool keyPressed[4] = { false };
+		bool keyPressed[LAST] = { false };
 	};
 
 	
