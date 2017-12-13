@@ -27,14 +27,16 @@ namespace engine
 	//Collision Detect Function
 	void TestApplication::DetectCollidingObjects()
 	{
-		/*printf("Car PositionX %f \n", m_sprites[0].position.x); 
+		/*
+		printf("Car PositionX %f \n", m_sprites[0].position.x); 
 		printf("Car PositionY %f \n", m_sprites[0].position.y);
 		printf("Mr T PositionX %f \n", m_sprites[1].position.x);
 		printf("Mr T PositionY %f \n", m_sprites[1].position.y);
 		printf("Car DimensionsX %f \n", m_sprites[0].dimensions.x);
 		printf("Car DimensionsY %f \n", m_sprites[0].dimensions.y);
 		printf("Mr T DimensionsX %f \n", m_sprites[1].dimensions.x);
-		printf("Mr T DimensionsY %f \n", m_sprites[1].dimensions.y);*/
+		printf("Mr T DimensionsY %f \n", m_sprites[1].dimensions.y);
+		*/
 		for (int a = 0; a < m_sprites.size(); a++)
 		{
 			for (int b = a+1; b < m_sprites.size(); b++)
@@ -112,11 +114,11 @@ namespace engine
 		// set OpenGL drawing window display to entire window.
 		glViewport(0, 0, window->getWidth(), window->getHeight());
 
-		float val = fabsf(sinf(2.0f*m_totalTime));
+		//float val = fabsf(sinf(2.0f*m_totalTime));
 		// set the base depth to 1.0f		
 		glClearDepthf(1.0f);
 		// Clear screen with pulsating yellow: 
-		graphics->clearScreen(val, val * 1.5f, val * 0.5f, true);
+		graphics->clearScreen(0.5f, 0.5f, 0.5f, true); 
 		
 		//coords = m_camera->convertScreenToWorld(coords);
 		
@@ -127,7 +129,7 @@ namespace engine
 		shaderProg->use();
 
 		// draw code goes here
-		drawBackground();
+		//drawBackground();
 		//setCamera matrix
 		GLint pLocation = shaderProg->getUniformLocation("u_mvpMatrix");
 		glUniform1i(pLocation, 0);
@@ -157,19 +159,38 @@ namespace engine
 	{
 		glm::vec2 cameraCoords = m_camera->getPosition();
 		//InputManager Ver 2.0
-		if (m_inputManager->getKeyPressedValue(0)){
+		if (m_inputManager->getKeyPressedValue(UP)) {
+			//m_camera->setPosition(glm::vec2(cameraCoords.x, cameraCoords.y + 1.0f * SPEED));
+			m_sprites[0].position.y += 1.0f * SPEED;
+		}
+		if (m_inputManager->getKeyPressedValue(DOWN)) {
+			//m_camera->setPosition(glm::vec2(cameraCoords.x, cameraCoords.y - 1.0f * SPEED));
+			m_sprites[0].position.y -= 1.0f * SPEED;
+		}
+		if (m_inputManager->getKeyPressedValue(RIGHT)) {
+			//m_camera->setPosition(glm::vec2(cameraCoords.x + 1.0f * SPEED, cameraCoords.y));
+			m_sprites[0].position.x += 1.0f * SPEED;
+		}
+		if (m_inputManager->getKeyPressedValue(LEFT)) {
+			//m_camera->setPosition(glm::vec2(cameraCoords.x - 1.0f * SPEED, cameraCoords.y));
+			m_sprites[0].position.x -= 1.0f * SPEED;
+		}
+
+
+		// Camera controls
+		if (m_inputManager->getKeyPressedValue(W)){
 			m_camera->setPosition(glm::vec2(cameraCoords.x, cameraCoords.y + 1.0f * SPEED));
 			//m_sprites[0].position.y += 1.0f * SPEED;
 		}
-		if (m_inputManager->getKeyPressedValue(2)) {
+		if (m_inputManager->getKeyPressedValue(S)) {
 			m_camera->setPosition(glm::vec2(cameraCoords.x, cameraCoords.y - 1.0f * SPEED));
 			//m_sprites[0].position.y -= 1.0f * SPEED;
 		}
-		if (m_inputManager->getKeyPressedValue(1)) {
+		if (m_inputManager->getKeyPressedValue(D)) {
 			m_camera->setPosition(glm::vec2(cameraCoords.x + 1.0f * SPEED, cameraCoords.y));
 			//m_sprites[0].position.x += 1.0f * SPEED;
 		}
-		if (m_inputManager->getKeyPressedValue(3)) {
+		if (m_inputManager->getKeyPressedValue(A)) {
 			m_camera->setPosition(glm::vec2(cameraCoords.x - 1.0f * SPEED, cameraCoords.y));
 			//m_sprites[0].position.x -= 1.0f * SPEED;
 		}
