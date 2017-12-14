@@ -3,7 +3,7 @@
 
 namespace engine {
 
-	InputManager::InputManager() : m_mouseX(0.0f), m_mouseY(0.0f), m_arrowkeyX(0.0f), m_arrowkeyY(0.0f)
+	InputManager::InputManager() : m_mouseX(0.0f), m_mouseY(0.0f) //, m_arrowkeyX(0.0f), m_arrowkeyY(0.0f)
 	{
 		
 	}
@@ -24,7 +24,7 @@ namespace engine {
 	float InputManager::getMouseY() {
 		return m_mouseY;
 	}
-
+	/*
 	void InputManager::setArrowKeyValues(float x, float y)
 	{
 		m_arrowkeyX = x;
@@ -38,8 +38,9 @@ namespace engine {
 	float InputManager::getArrowKeyY() {
 		return m_arrowkeyY;
 	}
+	*/
 
-	void InputManager::setKeyPressedValues(int index, bool value)
+	void InputManager::setKeyPressedValue(int index, bool value)
 	{
 		keyPressed[index] = value;
 	}

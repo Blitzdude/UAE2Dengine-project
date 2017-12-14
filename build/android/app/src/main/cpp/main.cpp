@@ -9,6 +9,7 @@
 #include <TestApplication.h>
 #include <AndroidWindow.h>
 #include <core/ElapsedTimer.h>
+#include <core/InputManager.h>
 
 ///
 /// Shared state for our app.
@@ -97,33 +98,33 @@ int32_t AndroidEngine::onInput(struct android_app* app, AInputEvent* event)
 
                 if (AMotionEvent_getAction(event) != AMOTION_EVENT_ACTION_UP) {
 
-                    if (x < engine->window->getWidth() / 3.0f) {
-                       engine->window->getInputManager()->setKeyPressedValues(3, true);
-                       engine->window->getInputManager()->setKeyPressedValues(1, false);
+                    if (x < engine->window->getWidth() / 3.0f) { // left
+                       engine->window->getInputManager()->setKeyPressedValue(engine::buttons::LEFT, true);
+                       engine->window->getInputManager()->setKeyPressedValue(engine::buttons::RIGHT, false);
 
                     }
-                    else if(x > engine->window->getWidth() * 2.0f / 3.0f) {
-                       engine->window->getInputManager()->setKeyPressedValues(1, true);
-                       engine->window->getInputManager()->setKeyPressedValues(3, false);
+                    else if(x > engine->window->getWidth() * 2.0f / 3.0f) { // right
+                       engine->window->getInputManager()->setKeyPressedValue(engine::buttons::RIGHT, true);
+                       engine->window->getInputManager()->setKeyPressedValue(engine::buttons::LEFT, false);
 
                     }
 
-                    if (y < engine->window->getHeight() / 3.0f) {
-                        engine->window->getInputManager()->setKeyPressedValues(0, true);
-                        engine->window->getInputManager()->setKeyPressedValues(2, false);
+                    if (y < engine->window->getHeight() / 3.0f) { // up
+                        engine->window->getInputManager()->setKeyPressedValue(engine::buttons::UP, true);
+                        engine->window->getInputManager()->setKeyPressedValue(engine::buttons::DOWN, false);
                     }
-                    else if(y > (engine->window->getHeight() * 2.0f) / 3.0f) {
-                        engine->window->getInputManager()->setKeyPressedValues(2, true);
-                        engine->window->getInputManager()->setKeyPressedValues(0, false);
+                    else if(y > (engine->window->getHeight() * 2.0f) / 3.0f) { // down
+                        engine->window->getInputManager()->setKeyPressedValue(engine::buttons::DOWN, true);
+                        engine->window->getInputManager()->setKeyPressedValue(engine::buttons::UP, false);
                     }
 
                 }
                 else {
                     // clear input
-                    engine->window->getInputManager()->setKeyPressedValues(0, false);
-                    engine->window->getInputManager()->setKeyPressedValues(1, false);
-                    engine->window->getInputManager()->setKeyPressedValues(2, false);
-                    engine->window->getInputManager()->setKeyPressedValues(3, false);
+                    engine->window->getInputManager()->setKeyPressedValue(engine::buttons::UP, false);
+                    engine->window->getInputManager()->setKeyPressedValue(engine::buttons::RIGHT, false);
+                    engine->window->getInputManager()->setKeyPressedValue(engine::buttons::DOWN, false);
+                    engine->window->getInputManager()->setKeyPressedValue(engine::buttons::LEFT, false);
 
                 }
             }

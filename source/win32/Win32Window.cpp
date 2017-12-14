@@ -96,31 +96,31 @@ namespace engine
 			{
 			case VK_UP:
 				//window->getInputManager()->setArrowKeyValues(0.0f, 1.0f);
-				window->getInputManager()->setKeyPressedValues(UP, true);
+				window->getInputManager()->setKeyPressedValue(UP, true);
 				break;
 			case VK_RIGHT:
 				//window->getInputManager()->setArrowKeyValues(1.0f, 0.0f);
-				window->getInputManager()->setKeyPressedValues(RIGHT, true);
+				window->getInputManager()->setKeyPressedValue(RIGHT, true);
 				break;
 			case VK_DOWN:
 				//window->getInputManager()->setArrowKeyValues(0.0f, -1.0f);
-				window->getInputManager()->setKeyPressedValues(DOWN, true);
+				window->getInputManager()->setKeyPressedValue(DOWN, true);
 				break;
 			case VK_LEFT:
 				//window->getInputManager()->setArrowKeyValues(-1.0f, 0.0f);
-				window->getInputManager()->setKeyPressedValues(LEFT, true);
+				window->getInputManager()->setKeyPressedValue(LEFT, true);
 				break;
 			case 87:
-				window->getInputManager()->setKeyPressedValues(W, true);
+				window->getInputManager()->setKeyPressedValue(W, true);
 				break;
 			case 68:
-				window->getInputManager()->setKeyPressedValues(D, true);
+				window->getInputManager()->setKeyPressedValue(D, true);
 				break;
 			case 83:
-				window->getInputManager()->setKeyPressedValues(S, true);
+				window->getInputManager()->setKeyPressedValue(S, true);
 				break;
 			case 65:
-				window->getInputManager()->setKeyPressedValues(A, true);
+				window->getInputManager()->setKeyPressedValue(A, true);
 				break;
 			default:
 				printf("Not ArrowKey Pressed: %d \n", wParam );
@@ -139,31 +139,31 @@ namespace engine
 			{
 			case VK_UP:
 				//window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
-				window->getInputManager()->setKeyPressedValues(0, false);
+				window->getInputManager()->setKeyPressedValue(UP, false);
 				break;
 			case VK_RIGHT:
 				//window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
-				window->getInputManager()->setKeyPressedValues(1, false);
+				window->getInputManager()->setKeyPressedValue(RIGHT, false);
 				break;
 			case VK_DOWN:
 				//window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
-				window->getInputManager()->setKeyPressedValues(2, false);
+				window->getInputManager()->setKeyPressedValue(DOWN, false);
 				break;
 			case VK_LEFT:
 				//window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
-				window->getInputManager()->setKeyPressedValues(3, false);
+				window->getInputManager()->setKeyPressedValue(LEFT, false);
 				break;
 			case 87: // W (ASCII)
-				window->getInputManager()->setKeyPressedValues(W, false);
+				window->getInputManager()->setKeyPressedValue(W, false);
 				break;
 			case 68: // A (ASCII)
-				window->getInputManager()->setKeyPressedValues(D, false);
+				window->getInputManager()->setKeyPressedValue(D, false);
 				break;
 			case 83: // S (ASCII)
-				window->getInputManager()->setKeyPressedValues(S, false);
+				window->getInputManager()->setKeyPressedValue(S, false);
 				break;
 			case 65: // D (ASCII)
-				window->getInputManager()->setKeyPressedValues(A, false);
+				window->getInputManager()->setKeyPressedValue(A, false);
 				break;
 			}
 			break;

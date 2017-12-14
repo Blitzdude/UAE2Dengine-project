@@ -28,14 +28,15 @@ namespace engine {
 
 		float getMouseX();
 		float getMouseY();
-
+		/*
 		void setArrowKeyValues(float x, float y);
 
 		float getArrowKeyX();
 		float getArrowKeyY();
+		*/
 
 		//Inputmanager Ver. 2.0
-		void setKeyPressedValues(int index, bool value);
+		void setKeyPressedValue(int index, bool value);
 		bool getKeyPressedValue(int index);
 
 	private:
@@ -43,8 +44,10 @@ namespace engine {
 		float m_mouseX;
 		float m_mouseY;
 
+		/*
 		float m_arrowkeyX;
 		float m_arrowkeyY;
+		*/
 
 		//InputManager Ver. 2.0
 		/*
