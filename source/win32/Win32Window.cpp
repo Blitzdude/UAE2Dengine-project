@@ -153,16 +153,16 @@ namespace engine
 				//window->getInputManager()->setArrowKeyValues(0.0f, 0.0f);
 				window->getInputManager()->setKeyPressedValues(3, false);
 				break;
-			case 87:
+			case 87: // W (ASCII)
 				window->getInputManager()->setKeyPressedValues(W, false);
 				break;
-			case 68:
+			case 68: // A (ASCII)
 				window->getInputManager()->setKeyPressedValues(D, false);
 				break;
-			case 83:
+			case 83: // S (ASCII)
 				window->getInputManager()->setKeyPressedValues(S, false);
 				break;
-			case 65:
+			case 65: // D (ASCII)
 				window->getInputManager()->setKeyPressedValues(A, false);
 				break;
 			}
