@@ -54,6 +54,9 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>Winmm.lib</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -76,6 +79,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\android\AndroidWindow.h" />
+    <ClInclude Include="..\..\include\core\AudioEngine.h" />
     <ClInclude Include="..\..\include\core\Camera2D.h" />
     <ClInclude Include="..\..\include\core\ElapsedTimer.h" />
     <ClInclude Include="..\..\include\core\InputManager.h" />
@@ -101,6 +105,7 @@
     <ClCompile Include="..\..\source\android\AndroidWindow.cpp">
       <FileType>Text</FileType>
     </ClCompile>
+    <ClCompile Include="..\..\source\core\AudioEngine.cpp" />
     <ClCompile Include="..\..\source\core\Camera2D.cpp" />
     <ClCompile Include="..\..\source\core\ElapsedTimer.cpp" />
     <ClCompile Include="..\..\source\core\InputManager.cpp" />

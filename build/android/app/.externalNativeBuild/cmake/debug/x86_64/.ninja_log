@@ -1,0 +1,23 @@
+# ninja log v5
+1	429	0	CMakeFiles/app-glue.dir/C_/Users/ValtteriRuo1/AppData/Local/Android/Sdk/ndk-bundle/sources/android/native_app_glue/android_native_app_glue.c.o	646cdbad672bfcdc
+430	560	0	libapp-glue.a	8eb250886dc36b07
+585	1565	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/OGL/OGL.cpp.o	5b8b6b713d0e3430
+662	1619	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/core/InputManager.cpp.o	695b1094670aceeb
+569	1677	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/android/AndroidWindow.cpp.o	960a6bbadaa1293d
+633	1744	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/core/ElapsedTimer.cpp.o	58c0dc86736ed1fd
+647	2033	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/core/IOManager.cpp.o	ea36520e9532eba6
+602	2075	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/OGL/Shader.cpp.o	60085d52421999f6
+577	2376	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/OGL/ImageLoader.cpp.o	5120a619c752a5a7
+618	2619	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/core/Camera2D.cpp.o	ed54b39f9aa14b3
+1565	2648	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/core/Object.cpp.o	52c6157ec8b9b33d
+560	2670	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/graphics/GraphicsApplication.cpp.o	84ad929a32c79971
+1619	2687	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/core/ResourceManager.cpp.o	94af3bfe249dd3a4
+593	2804	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/OGL/OGLGraphicsSystem.cpp.o	9bb2bff3e60682fc
+1744	2807	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/core/TextureCache.cpp.o	d61e5e6eef0b7168
+2376	3019	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/graphics/Window.cpp.o	3df852e780e2d58d
+1677	3618	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/core/SpriteBatch.cpp.o	54cbaf1a8b12fd7b
+2034	3688	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/source/graphics/GraphicsSystem.cpp.o	30043fe995771bfd
+2648	3772	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/GraphicsTest/Sprite.cpp.o	e0ca0cec8856353a
+2075	3781	0	CMakeFiles/native-activity.dir/main.cpp.o	7af09ff6c9f85d5
+2620	4062	0	CMakeFiles/native-activity.dir/E_/UAE2DEngine_repofile/UAE2dEngine-repository/GraphicsTest/TestApplication.cpp.o	c4b14660358a3ef8
+4062	4469	0	E:/UAE2DEngine_repofile/UAE2dEngine-repository/build/android/app/build/intermediates/cmake/debug/obj/x86_64/libnative-activity.so	1ce4bef21f658838

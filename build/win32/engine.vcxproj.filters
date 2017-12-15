@@ -108,6 +108,9 @@
     <ClInclude Include="..\..\include\graphics\Vertex.h">
       <Filter>Header Files\graphics</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\core\AudioEngine.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\ogl\OGLGraphicsSystem.cpp">
@@ -159,6 +162,9 @@
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\core\SpriteBatch.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\core\AudioEngine.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
   </ItemGroup>

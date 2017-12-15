@@ -12,6 +12,7 @@
 #include <glm/glm.hpp>
 #include <core/stb_image.h>
 #include "Sprite.h"
+#include <core/AudioEngine.h>
 
 
 #include "TestApplication.h"
@@ -85,6 +86,9 @@ namespace engine
 		m_sprites.push_back(foo);
 		Sprite foo2 = Sprite(300.0f, 0.0f, "mr_t.png", m_assetManager);
 		m_sprites.push_back(foo2);
+
+		AudioEngine audio;
+		audio.Play(L"chimes.wav");
 	}
 
 	void TestApplication::initShaders()

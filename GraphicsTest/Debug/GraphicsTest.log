@@ -1,10 +1,1 @@
-﻿  TestApplication.cpp
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(40): warning C4018: '<': signed/unsigned mismatch
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(42): warning C4018: '<': signed/unsigned mismatch
-  win32_main.cpp
-  Sprite.cpp
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\sprite.cpp(13): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\sprite.cpp(14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-  GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
-  GraphicsTest.vcxproj -> C:\Users\JoelKan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)
+﻿  GraphicsTest.vcxproj -> J:\UAE2DEngine_repofile\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
