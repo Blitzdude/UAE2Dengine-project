@@ -122,6 +122,9 @@ namespace engine
 			case 65:
 				window->getInputManager()->setKeyPressedValue(A, true);
 				break;
+			case VK_ESCAPE:
+				PostQuitMessage(0);
+				break;
 			default:
 				printf("Not ArrowKey Pressed: %d \n", wParam );
 				break;

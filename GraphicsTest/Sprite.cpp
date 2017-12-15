@@ -2,18 +2,26 @@
 #include <core/ResourceManager.h>
 
 
-Sprite::Sprite(float x, float y, std::string texturePath, void* manager)
+Sprite::Sprite(float x, float y, std::string texturePath, void* manager, bool enableCol)
 {
 	position.x = x;
 	position.y = y;
 	
+	hasCollider = enableCol;
 
 	m_texture = engine::ResourceManager::getTexture(texturePath, m_texture.width, m_texture.height, m_bytesPerPixel, manager);
 	
 	dimensions.x = m_texture.width;
 	dimensions.y = m_texture.height;
 
-	LOGI("width: %d, height: %d, bpp: %d \n", (int)m_texture.width, (int)m_texture.height, m_bytesPerPixel);
+	if (hasCollider) {
+		LOGI("Collider placed! \n");
+		collider.position.x = x;
+		collider.position.y = y;
+		collider.dimensions.x = m_texture.width;
+		collider.dimensions.y = m_texture.height;
+	}
+	//LOGI("width: %d, height: %d, bpp: %d \n", (int)m_texture.width, (int)m_texture.height, m_bytesPerPixel);
 }
 
 
@@ -66,3 +74,12 @@ void Sprite::draw(engine::Shader* program)
 	//draw vertex array as triangles
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 }
+
+void Sprite::Move(float xPos, float yPos)
+{
+	position.x += xPos;
+	position.y += yPos;
+	collider.position.x += xPos;
+	collider.position.y += yPos;
+}
+

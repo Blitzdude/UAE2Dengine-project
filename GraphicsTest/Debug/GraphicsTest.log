@@ -1,1 +1,6 @@
-﻿  GraphicsTest.vcxproj -> J:\UAE2DEngine_repofile\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
+﻿  TestApplication.cpp
+j:\uae2dengine_repofile\uae2dengine-repository\graphicstest\testapplication.cpp(32): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  win32_main.cpp
+  GraphicsTest.vcxproj -> J:\UAE2DEngine_repofile\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe

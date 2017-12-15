@@ -21,38 +21,33 @@ namespace engine
 {
 
 	const float SPEED = 20.0f;
-
+	
 	//prototypes
 	void drawBackground();
 
-	//Collision Detect Function
 	void TestApplication::DetectCollidingObjects()
 	{
-		/*
-		printf("Car PositionX %f \n", m_sprites[0].position.x); 
-		printf("Car PositionY %f \n", m_sprites[0].position.y);
-		printf("Mr T PositionX %f \n", m_sprites[1].position.x);
-		printf("Mr T PositionY %f \n", m_sprites[1].position.y);
-		printf("Car DimensionsX %f \n", m_sprites[0].dimensions.x);
-		printf("Car DimensionsY %f \n", m_sprites[0].dimensions.y);
-		printf("Mr T DimensionsX %f \n", m_sprites[1].dimensions.x);
-		printf("Mr T DimensionsY %f \n", m_sprites[1].dimensions.y);
-		*/
-		for (int a = 0; a < m_sprites.size(); a++)
+		for (int p = 0; p < 1; p++)
 		{
-			for (int b = a+1; b < m_sprites.size(); b++)
+			for (int other = p + 1; other < m_sprites.size(); other++)
 			{
-				if (m_sprites[a].position.x < m_sprites[b].position.x + m_sprites[b].dimensions.x && 
-					m_sprites[a].position.x + m_sprites[a].dimensions.x > m_sprites[b].position.x && 
-					m_sprites[a].position.y < m_sprites[b].position.y + m_sprites[b].dimensions.y && 
-					m_sprites[a].position.y + m_sprites[a].dimensions.y > m_sprites[b].position.y)
+				if (m_sprites[other].hasCollider == true)
 				{
-					printf("Collision Detected! \n");
-					m_sprites.erase(m_sprites.begin() + b);
-				}
-				else
-				{
-					//printf("Collision Not Detected! \n");
+					if (m_sprites[p].collider.position.x  < m_sprites[other].collider.position.x + m_sprites[other].collider.dimensions.x &&
+						m_sprites[p].collider.position.x + m_sprites[p].collider.dimensions.x > m_sprites[other].collider.position.x &&
+						m_sprites[p].collider.position.y < m_sprites[other].collider.position.y + m_sprites[other].collider.dimensions.y &&
+						m_sprites[p].collider.position.y + m_sprites[p].collider.dimensions.y > m_sprites[other].collider.position.y)
+					{
+						LOGI("Collision Detected! \n");
+						//Delete Collided sprite
+						m_sprites.erase(m_sprites.begin() + other);
+						//Add point to score
+						m_score++;
+					}
+					else
+					{
+						//LOGI("Collision Not Detected! \n");
+					}
 				}
 			}
 		}
@@ -64,6 +59,7 @@ namespace engine
 			, m_inputManager(inputMgr)
 			, m_assetManager(manager)
             , m_totalTime(0.0f)
+			, m_score(0)
 	{
 		LOGI("Starting UP...\n");
 
@@ -81,14 +77,27 @@ namespace engine
 		m_camera = new Camera2D();
 		m_camera->init(getWindow()->getWidth(), getWindow()->getHeight());
 
-		// init sprites
-		Sprite foo = Sprite(-300 , 50.0f, "NissanSkyline.png", m_assetManager);
-		m_sprites.push_back(foo);
-		Sprite foo2 = Sprite(300.0f, 0.0f, "mr_t.png", m_assetManager);
-		m_sprites.push_back(foo2);
+		// init sprites			Sprites with collider first
 
-		AudioEngine audio;
-		audio.Play(L"chimes.wav");
+		//Player Sprite First
+		Sprite foo = Sprite(0.0f, 0.0f, "NissanSkyline.png", m_assetManager, true);
+		m_sprites.push_back(foo);
+
+		//Collider Objects
+		Sprite foo2 = Sprite(600.0f, 600.0f, "mr_t.png", m_assetManager, true);
+		foo2.SetColliderOffsetValues(0.0f, 0.0f, 300.0f, 300.0f);
+		m_sprites.push_back(foo2);
+		
+		//Test: multiple colliding sprite objects
+		Sprite foo3 = Sprite(-800.0f, 0.0f, "mr_t.png", m_assetManager, true);
+		m_sprites.push_back(foo3);
+		Sprite foo4 = Sprite(-800.0f,-200.0f, "mr_t.png", m_assetManager, true);
+		m_sprites.push_back(foo4);
+		Sprite foo5 = Sprite(300.0f, -800.0f, "mr_t.png", m_assetManager, true);
+		m_sprites.push_back(foo5);
+		Sprite foo6 = Sprite(800.0f, 100.0f, "mr_t.png", m_assetManager, true);
+		m_sprites.push_back(foo6);
+		
 	}
 
 	void TestApplication::initShaders()
@@ -106,6 +115,17 @@ namespace engine
 
 		//Check Collision
 		DetectCollidingObjects();
+
+		//Check totaltime
+		if (m_totalTime >= 20.0f) 
+		{ 
+			//Reset totaltime
+			m_totalTime = 0.0f;
+			AudioEngine audio;
+			audio.Play(L"chimes.wav");
+			LOGI("Game Ended! \n"); 
+			LOGI("Game Score: %d \n", m_score);
+		}
 
 		m_camera->update();
 		
@@ -163,19 +183,32 @@ namespace engine
 		//InputManager Ver 2.0
 		if (m_inputManager->getKeyPressedValue(UP)) {
 			//m_camera->setPosition(glm::vec2(cameraCoords.x, cameraCoords.y + 1.0f * SPEED));
-			m_sprites[0].position.y += 1.0f * SPEED;
+			//m_sprites[0].position.y += 1.0f * SPEED;
+
+			//Move Player Sprite Up
+			m_sprites[0].Move(0.0f, 1.0f*SPEED);
+			
 		}
 		if (m_inputManager->getKeyPressedValue(DOWN)) {
 			//m_camera->setPosition(glm::vec2(cameraCoords.x, cameraCoords.y - 1.0f * SPEED));
-			m_sprites[0].position.y -= 1.0f * SPEED;
+			//m_sprites[0].position.y -= 1.0f * SPEED;
+
+			//Move Player Sprite Down
+			m_sprites[0].Move(0.0f, -1.0f*SPEED);
 		}
 		if (m_inputManager->getKeyPressedValue(RIGHT)) {
 			//m_camera->setPosition(glm::vec2(cameraCoords.x + 1.0f * SPEED, cameraCoords.y));
-			m_sprites[0].position.x += 1.0f * SPEED;
+			//m_sprites[0].position.x += 1.0f * SPEED;
+
+			//Move Player Sprite Right
+			m_sprites[0].Move(1.0f*SPEED,0.0f);
 		}
 		if (m_inputManager->getKeyPressedValue(LEFT)) {
 			//m_camera->setPosition(glm::vec2(cameraCoords.x - 1.0f * SPEED, cameraCoords.y));
-			m_sprites[0].position.x -= 1.0f * SPEED;
+			//m_sprites[0].position.x -= 1.0f * SPEED;
+
+			//Move Player Sprite Left
+			m_sprites[0].Move(-1.0f*SPEED,0.0f);
 		}
 
 

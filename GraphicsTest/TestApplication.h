@@ -56,6 +56,7 @@ namespace engine {
 		InputManager*			m_inputManager;
 		Camera2D*				m_camera;
 		std::vector<Sprite>		m_sprites;
+		int						m_score;
 	};
 
 }
