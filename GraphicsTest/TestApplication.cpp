@@ -13,14 +13,24 @@
 #include <core/stb_image.h>
 #include "Sprite.h"
 #include <core/AudioEngine.h>
+#include <stdlib.h>
+#include <time.h>
 
 
 #include "TestApplication.h"
 
 namespace engine
 {
+	// global variables
+	const float SPEED = 3.0f;
+	const int MAX_FRUITS = 6;
 
-	const float SPEED = 20.0f;
+	//game state enum
+	enum gameState {
+		START,
+		PLAYING,
+		END
+	};
 	
 	//prototypes
 	void drawBackground();
@@ -72,32 +82,26 @@ namespace engine
 
 	void TestApplication::init()
 	{
+		m_gameState = PLAYING;
 		initShaders();
+		int screenWidth = getWindow()->getWidth();
+		int screenHeight = getWindow()->getHeight();
+
 		// create camera and initilize it
 		m_camera = new Camera2D();
-		m_camera->init(getWindow()->getWidth(), getWindow()->getHeight());
+		m_camera->init(screenWidth, screenHeight);
+		m_camera->setPosition(glm::vec2(screenWidth / 2, screenHeight / 2));
+
+		// init random seed
+		srand(time(NULL));
 
 		// init sprites			Sprites with collider first
 
 		//Player Sprite First
-		Sprite foo = Sprite(0.0f, 0.0f, "NissanSkyline.png", m_assetManager, true);
+		Sprite foo = Sprite(0.0f, 0.0f, "Textures/Hippobiili1.png", m_assetManager, true);
 		m_sprites.push_back(foo);
 
 		//Collider Objects
-		Sprite foo2 = Sprite(600.0f, 600.0f, "mr_t.png", m_assetManager, true);
-		foo2.SetColliderOffsetValues(0.0f, 0.0f, 300.0f, 300.0f);
-		m_sprites.push_back(foo2);
-		
-		//Test: multiple colliding sprite objects
-		Sprite foo3 = Sprite(-800.0f, 0.0f, "mr_t.png", m_assetManager, true);
-		m_sprites.push_back(foo3);
-		Sprite foo4 = Sprite(-800.0f,-200.0f, "mr_t.png", m_assetManager, true);
-		m_sprites.push_back(foo4);
-		Sprite foo5 = Sprite(300.0f, -800.0f, "mr_t.png", m_assetManager, true);
-		m_sprites.push_back(foo5);
-		Sprite foo6 = Sprite(800.0f, 100.0f, "mr_t.png", m_assetManager, true);
-		m_sprites.push_back(foo6);
-		
 	}
 
 	void TestApplication::initShaders()
@@ -110,8 +114,19 @@ namespace engine
 
 	bool TestApplication::update(float deltaTime)
 	{
+
+		static int screenWidth = getWindow()->getWidth();
+		static int screenHeight = getWindow()->getHeight();
+
 		m_totalTime += deltaTime;
 		processInput(getWindow());
+
+		// add fruit
+		if (m_sprites.size() <= MAX_FRUITS) {
+			Sprite fruit(rand() % (screenWidth - 50), rand() % (screenHeight - 50), "Textures/Banaaloni1.png", m_assetManager, true);
+			m_sprites.push_back(fruit);
+		}
+		
 
 		//Check Collision
 		DetectCollidingObjects();
@@ -119,12 +134,15 @@ namespace engine
 		//Check totaltime
 		if (m_totalTime >= 20.0f) 
 		{ 
+			m_gameState = END;
+
 			//Reset totaltime
 			m_totalTime = 0.0f;
 			AudioEngine audio;
 			audio.Play(L"chimes.wav");
 			LOGI("Game Ended! \n"); 
 			LOGI("Game Score: %d \n", m_score);
+
 		}
 
 		m_camera->update();
@@ -159,7 +177,7 @@ namespace engine
 		glUniform1i(pLocation, 0);
 
 		glm::mat4 cameraMatrix = m_camera->getCameraMatrix();
-		m_camera->setScale(0.40f);
+		m_camera->setScale(1.0f);
 
 
 
@@ -179,40 +197,49 @@ namespace engine
 
 	void TestApplication::processInput(Window* window)
 	{
-		glm::vec2 cameraCoords = m_camera->getPosition();
-		//InputManager Ver 2.0
-		if (m_inputManager->getKeyPressedValue(UP)) {
-			//m_camera->setPosition(glm::vec2(cameraCoords.x, cameraCoords.y + 1.0f * SPEED));
-			//m_sprites[0].position.y += 1.0f * SPEED;
+		glm::vec2 clamp(window->getWidth() - m_sprites[0].dimensions.x,
+			window->getHeight() - m_sprites[0].dimensions.y);
 
-			//Move Player Sprite Up
-			m_sprites[0].Move(0.0f, 1.0f*SPEED);
+		if (m_gameState == PLAYING)
+			{
+
+			glm::vec2 cameraCoords = m_camera->getPosition();
+			//InputManager Ver 2.0
+			if (m_inputManager->getKeyPressedValue(UP)) {
+				if (m_sprites[0].position.y < clamp.y)
+				{
+					//Move Player Sprite Up
+					m_sprites[0].Move(0.0f, 1.0f * SPEED);
+				}
 			
+			}
+			if (m_inputManager->getKeyPressedValue(DOWN)) {
+				if (m_sprites[0].position.y > 0.0f) 
+				{
+					//Move Player Sprite Down
+					m_sprites[0].Move(0.0f, -1.0f * SPEED);
+				}
+			}
+			if (m_inputManager->getKeyPressedValue(RIGHT)) {
+				if (m_sprites[0].position.x < clamp.x)
+				{
+					//Move Player Sprite Right
+					m_sprites[0].Move(1.0f*SPEED, 0.0f);
+				}
+			}
+			if (m_inputManager->getKeyPressedValue(LEFT)) {
+				if (m_sprites[0].position.x > 0.0f) {
+					//Move Player Sprite Left
+					m_sprites[0].Move(-1.0f*SPEED,0.0f);
+				}
+			}
+			LOGI("Window: %d , %d, Player position: %f , %f \r", 
+				window->getWidth(), window->getHeight(),	
+				m_sprites[0].position.x, m_sprites[0].position.y);
 		}
-		if (m_inputManager->getKeyPressedValue(DOWN)) {
-			//m_camera->setPosition(glm::vec2(cameraCoords.x, cameraCoords.y - 1.0f * SPEED));
-			//m_sprites[0].position.y -= 1.0f * SPEED;
 
-			//Move Player Sprite Down
-			m_sprites[0].Move(0.0f, -1.0f*SPEED);
-		}
-		if (m_inputManager->getKeyPressedValue(RIGHT)) {
-			//m_camera->setPosition(glm::vec2(cameraCoords.x + 1.0f * SPEED, cameraCoords.y));
-			//m_sprites[0].position.x += 1.0f * SPEED;
-
-			//Move Player Sprite Right
-			m_sprites[0].Move(1.0f*SPEED,0.0f);
-		}
-		if (m_inputManager->getKeyPressedValue(LEFT)) {
-			//m_camera->setPosition(glm::vec2(cameraCoords.x - 1.0f * SPEED, cameraCoords.y));
-			//m_sprites[0].position.x -= 1.0f * SPEED;
-
-			//Move Player Sprite Left
-			m_sprites[0].Move(-1.0f*SPEED,0.0f);
-		}
-
-
-		// Camera controls
+		// Camera controls NOT NEEDED
+		/*
 		if (m_inputManager->getKeyPressedValue(W)){
 			m_camera->setPosition(glm::vec2(cameraCoords.x, cameraCoords.y + 1.0f * SPEED));
 			//m_sprites[0].position.y += 1.0f * SPEED;
@@ -229,6 +256,7 @@ namespace engine
 			m_camera->setPosition(glm::vec2(cameraCoords.x - 1.0f * SPEED, cameraCoords.y));
 			//m_sprites[0].position.x -= 1.0f * SPEED;
 		}
+		*/
 	}
 
 

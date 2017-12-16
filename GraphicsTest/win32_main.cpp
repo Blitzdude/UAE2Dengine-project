@@ -13,10 +13,12 @@
 #include <stdlib.h>
 #include <core/Log.h>
 
+#include <iostream>
+
 int main(int argc, char* argv[]) {
 	//fclose(stdout);
-	int w = 640;
-	int h = 480;
+	int w = 1280;
+	int h = 960;
 	LOGI("Application create window (%d, %d)\n", w, h );
 	//fopen(stdout);
 

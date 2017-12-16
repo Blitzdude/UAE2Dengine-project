@@ -1,6 +1,2 @@
-﻿  Win32Window.cpp
-j:\uae2dengine_repofile\uae2dengine-repository\source\win32\win32window.cpp(16): warning C4101: 'hdc': unreferenced local variable
-j:\uae2dengine_repofile\uae2dengine-repository\source\win32\win32window.cpp(19): warning C4101: 'ptWindowLR': unreferenced local variable
-j:\uae2dengine_repofile\uae2dengine-repository\source\win32\win32window.cpp(18): warning C4101: 'ptWindowUL': unreferenced local variable
-j:\uae2dengine_repofile\uae2dengine-repository\source\win32\win32window.cpp(17): warning C4101: 'windowRect': unreferenced local variable
-  engine.vcxproj -> J:\UAE2DEngine_repofile\UAE2dEngine-repository\build\win32\Debug\engine.lib
+﻿  Object.cpp
+  engine.vcxproj -> C:\Users\Joel\Desktop\UAE2dEngine-repository\build\win32\Debug\engine.lib

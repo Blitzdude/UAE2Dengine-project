@@ -1,6 +1,6 @@
 ﻿  TestApplication.cpp
-j:\uae2dengine_repofile\uae2dengine-repository\graphicstest\testapplication.cpp(32): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  win32_main.cpp
-  GraphicsTest.vcxproj -> J:\UAE2DEngine_repofile\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(42): warning C4018: '<': signed/unsigned mismatch
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(96): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GraphicsTest.vcxproj -> C:\Users\Joel\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
+  GraphicsTest.vcxproj -> C:\Users\Joel\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)

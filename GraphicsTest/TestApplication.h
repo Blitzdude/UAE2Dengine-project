@@ -50,7 +50,7 @@ namespace engine {
 		void DetectCollidingObjects();
 
 	private:
-		
+		int						m_gameState;
 		float					m_totalTime;
 		void* 					m_assetManager;
 		InputManager*			m_inputManager;
