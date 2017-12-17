@@ -1,6 +1,12 @@
 ﻿  TestApplication.cpp
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(42): warning C4018: '<': signed/unsigned mismatch
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(96): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(126): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(56): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(169): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(170): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(174): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(175): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(302): warning C4018: '<': signed/unsigned mismatch
   GraphicsTest.vcxproj -> C:\Users\Joel\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
   GraphicsTest.vcxproj -> C:\Users\Joel\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)

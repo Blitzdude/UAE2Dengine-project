@@ -42,6 +42,7 @@ int main(int argc, char* argv[]) {
 		float deltaTime = frameTimer.getTime();
 		frameTimer.reset();
 		application->update(deltaTime);
+
 	}
 
 	LOGI("Application done!\n");

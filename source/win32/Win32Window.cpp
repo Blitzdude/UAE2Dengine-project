@@ -55,8 +55,6 @@ namespace engine
 		case WM_LBUTTONDOWN:
 		{
 		
-		
-		
 		}
 		break;
 

@@ -13,6 +13,7 @@
 #include <OGL/Shader.h>
 #include <core/InputManager.h>
 #include <core/Camera2D.h>
+#include <core/AudioEngine.h>
 #include <graphics/Texture2D.h>
 #include "Sprite.h"
 #include <vector>
@@ -21,6 +22,14 @@
 #include <glm/gtc/type_ptr.hpp>
 
 namespace engine {
+
+	//game state enum
+	enum gameState {
+		INIT,
+		START,
+		PLAYING,
+		END
+	};
 
 	class Window;
 
@@ -37,6 +46,7 @@ namespace engine {
 
 		void init();
 		void initShaders();
+		void initGame();
 
 		/// Updates application. Returns true, if application is running.
 		virtual bool update(float deltaTime);
@@ -50,9 +60,12 @@ namespace engine {
 		void DetectCollidingObjects();
 
 	private:
-		int						m_gameState;
+		int						m_screenWidth;
+		int						m_screenHeight;
+		int						m_gameState = INIT;
 		float					m_totalTime;
 		void* 					m_assetManager;
+		AudioEngine				m_audioEngine;
 		InputManager*			m_inputManager;
 		Camera2D*				m_camera;
 		std::vector<Sprite>		m_sprites;

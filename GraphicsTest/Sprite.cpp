@@ -38,13 +38,13 @@ void Sprite::draw(engine::Shader* program)
 	GLuint posCoordLoc = program->getAttributeLocation("a_vertexPosition");
 
 	GLfloat vertices[] = {
-		position.x + 0.0f,				position.y + m_texture.height,	depth,		// vertex 0
-		position.x + 0.0f,				position.y + 0.0f,				depth,		// vertex 1
-		position.x + m_texture.width,	position.y + 0.0f,				depth,		// vertex 2
+		position.x + 0.0f,			position.y + dimensions.y,		depth,		// vertex 0
+		position.x + 0.0f,			position.y + 0.0f,				depth,		// vertex 1
+		position.x + dimensions.x,	position.y + 0.0f,				depth,		// vertex 2
 
-		position.x + m_texture.width,	position.y + m_texture.height,	depth,		// vertex 3
-		position.x + m_texture.width,	position.y + 0.0f,				depth,		// vertex 4
-		position.x + 0.0f,				position.y + m_texture.height,	depth,		// vertex 5
+		position.x + dimensions.x,	position.y + dimensions.y,		depth,		// vertex 3
+		position.x + dimensions.x,	position.y + 0.0f,				depth,		// vertex 4
+		position.x + 0.0f,			position.y + dimensions.y,		depth,		// vertex 5
 
 	};
 
