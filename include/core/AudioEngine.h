@@ -9,8 +9,10 @@ mmsystem.h
 to get "PlaySound" function to work
 also you need "Winmm.lib" being added to project
 */
+#if defined(_WIN32)
 #include <windows.h>
 #include <mmsystem.h>
+#endif // _WIN32
 
 namespace engine
 {
@@ -24,4 +26,4 @@ namespace engine
 		
 	};
 }
-#endif
+#endif // _AUDIO_ENGINE_H_

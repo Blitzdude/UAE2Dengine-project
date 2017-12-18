@@ -1,12 +1,15 @@
 ﻿  TestApplication.cpp
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(56): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(169): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(170): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(174): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(175): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\joel\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(302): warning C4018: '<': signed/unsigned mismatch
-  GraphicsTest.vcxproj -> C:\Users\Joel\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
-  GraphicsTest.vcxproj -> C:\Users\Joel\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(56): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(169): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(170): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(174): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(175): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(302): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Compiling...
+  win32_main.cpp
+  Generating Code...
+  GraphicsTest.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe

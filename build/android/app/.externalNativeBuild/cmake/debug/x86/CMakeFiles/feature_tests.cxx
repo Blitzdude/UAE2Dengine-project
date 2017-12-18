@@ -357,7 +357,39 @@
 "0"
 #endif
 "cxx_unicode_literals\n"
-"CXINDX( 	 ],VT           (   8   è       ~ id                                B]   f ‰¢ÐîjvÓ3ÑîjvÓ¼aÓîjvÓ‰¢ÐîjvÓÀ      ¼              T a r g e t D i r e c t o r i e s . t x t                  B]   f ‰¢ÐîjvÓ3ÑîjvÓ¼aÓîjvÓ‰¢ÐîjvÓÀ      ¼              T A R G E T ~ 1 . T X T . T M               B]   f ‰¢ÐîjvÓ3ÑîjvÓ¼aÓîjvÓ‰¢ÐîjvÓÀ      ¼              T A R G E T ~ 1 . T X T . T M               B]   f ‰¢ÐîjvÓ3ÑîjvÓ¼aÓîjvÓ‰¢ÐîjvÓÀ      ¼              T A R G E T  1 . T X T . T M               p Z     B]   f ‰¢ÐîjvÓ3ÑîjvÓ¼aÓîjvÓ‰¢ÐîjvÓÀ      ¼              T A R G E T ~ 1 . T X T . T M               ‰¢ÐîjvÓ3ÑîjvÓ¼aÓîjvÓ‰¢ÐîjvÓÀ      ¼              T A R G E T ~ 1 . T X T . T M                     
+"CXX_FEATURE:"
+#if ((__clang_major__ * 100) + __clang_minor__) >= 304 && __has_feature(cxx_generalized_initializers)
+"1"
+#else
+"0"
+#endif
+"cxx_uniform_initialization\n"
+"CXX_FEATURE:"
+#if ((__clang_major__ * 100) + __clang_minor__) >= 304 && __has_feature(cxx_unrestricted_unions)
+"1"
+#else
+"0"
+#endif
+"cxx_unrestricted_unions\n"
+"CXX_FEATURE:"
+#if ((__clang_major__ * 100) + __clang_minor__) >= 304 && __has_feature(cxx_user_literals)
+"1"
+#else
+"0"
+#endif
+"cxx_user_literals\n"
+"CXX_FEATURE:"
+#if ((__clang_major__ * 100) + __clang_minor__) >= 304 && __has_feature(cxx_variable_templates)
+"1"
+#else
+"0"
+#endif
+"cxx_variable_templates\n"
+"CXX_FEATURE:"
+#if ((__clang_major__ * 100) + __clang_minor__) >= 304 && __cplusplus >= 201103L
+"1"
+#else
+"0"
 #endif
 "cxx_variadic_macros\n"
 "CXX_FEATURE:"
@@ -370,4 +402,4 @@
 
 };
 
-int main(int argc, char** argv) { (vo )argv; return features[argc]; }
+int main(int argc, char** argv) { (void)argv; return features[argc]; }
