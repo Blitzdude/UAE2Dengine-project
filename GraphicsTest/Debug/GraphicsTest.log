@@ -8,8 +8,11 @@ c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp
 c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(174): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(175): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(302): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-  Compiling...
   win32_main.cpp
+  Sprite.cpp
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\sprite.cpp(14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\sprite.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\sprite.cpp(21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\sprite.cpp(22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Generating Code...
   GraphicsTest.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
