@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\joelkan\\Desktop\\UAE2dEngine-repository\\build\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v14\\values-v14.xml",
+            "outputFile": "D:\\Visual Studio 2013\\UAE2dEngine-repository\\build\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v14\\values-v14.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\joelkan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\f2a3bf2554cdac8cec2261ebb7e1377c\\res\\values-v14\\values-v14.xml",
+                    "source": "C:\\Users\\Joel\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.2.0.aar\\7b1c3c789daaf54478b6f57671b77e42\\res\\values-v14\\values-v14.xml",
                     "from": {
                         "startLines": "2,7,8,9,15,21,22,23,24,25,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",

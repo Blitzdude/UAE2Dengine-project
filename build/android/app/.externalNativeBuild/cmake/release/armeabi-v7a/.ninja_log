@@ -1,0 +1,24 @@
+# ninja log v5
+4	529	0	CMakeFiles/app-glue.dir/C_/Users/Joel/AppData/Local/Android/Sdk/ndk-bundle/sources/android/native_app_glue/android_native_app_glue.c.o	28a45be4665aa3d8
+530	649	0	libapp-glue.a	a32c468c523a7f8c
+649	1456	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/core/InputManager.cpp.o	4c4657ce75e7cfa6
+955	1492	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/core/AudioEngine.cpp.o	ee261762b62919e4
+932	1848	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/android/AndroidWindow.cpp.o	1d8e201116d0d8fb
+1493	1995	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/core/ElapsedTimer.cpp.o	c6923db91c07ce96
+1456	2034	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/OGL/OGL.cpp.o	911f97fbdb8132dd
+944	2151	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/OGL/Shader.cpp.o	dace2d00b35bf2d1
+980	2359	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/core/Camera2D.cpp.o	7496a3af833b83bc
+967	2815	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/core/IOManager.cpp.o	2850df392853a0ab
+2360	3024	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/graphics/Window.cpp.o	59c8003077ff6ec6
+2816	4026	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/core/ResourceManager.cpp.o	948ec5446ab678c7
+2034	4726	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/graphics/GraphicsApplication.cpp.o	463d7aa3920f6c62
+3024	4823	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/core/TextureCache.cpp.o	42c80f29304dd482
+1995	4954	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/OGL/OGLGraphicsSystem.cpp.o	6fb64858d8713fae
+2152	5171	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/GraphicsTest/TestApplication.cpp.o	b0f30e76594a9a0d
+4824	5762	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/core/Object.cpp.o	dd0cfd95298e675f
+4027	6088	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/graphics/GraphicsSystem.cpp.o	d96c70731a4e6430
+5171	6524	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/GraphicsTest/Sprite.cpp.o	37785f76fa513904
+4954	6789	0	CMakeFiles/native-activity.dir/main.cpp.o	5b9ba1b3410390e2
+4727	7188	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/core/SpriteBatch.cpp.o	e4a0ee8a6d333a47
+1849	10781	0	CMakeFiles/native-activity.dir/D_/Visual_Studio_2013/UAE2dEngine-repository/source/OGL/ImageLoader.cpp.o	adef72ee655bf172
+10781	11036	0	D:/Visual Studio 2013/UAE2dEngine-repository/build/android/app/build/intermediates/cmake/release/obj/armeabi-v7a/libnative-activity.so	d2fe382aa4c1548

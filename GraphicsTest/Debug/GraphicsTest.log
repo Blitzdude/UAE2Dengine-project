@@ -1,18 +1,19 @@
 ﻿  TestApplication.cpp
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(56): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(169): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(170): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(174): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(175): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\testapplication.cpp(302): warning C4018: '<': signed/unsigned mismatch
+d:\visual studio 2013\uae2dengine-repository\graphicstest\testapplication.cpp(56): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\testapplication.cpp(78): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\testapplication.cpp(112): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\testapplication.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\testapplication.cpp(169): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\testapplication.cpp(170): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\testapplication.cpp(174): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\testapplication.cpp(175): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\testapplication.cpp(302): warning C4018: '<': signed/unsigned mismatch
   win32_main.cpp
   Sprite.cpp
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\sprite.cpp(14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\sprite.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\sprite.cpp(21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\joelkan\desktop\uae2dengine-repository\graphicstest\sprite.cpp(22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\sprite.cpp(14): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\sprite.cpp(15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\sprite.cpp(21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+d:\visual studio 2013\uae2dengine-repository\graphicstest\sprite.cpp(22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   Generating Code...
-  GraphicsTest.vcxproj -> C:\Users\joelkan\Desktop\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
+  GraphicsTest.vcxproj -> D:\Visual Studio 2013\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.exe
+  GraphicsTest.vcxproj -> D:\Visual Studio 2013\UAE2dEngine-repository\build\win32\Debug\GraphicsTest.pdb (Full PDB)
